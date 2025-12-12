@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile of teacher_Add exam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <div id="divContainer" class="max-w-6xl mx-auto mt-10 p-6 space-y-8">
+        <!-- first part -->
+    <div class="bg-white flex items-center justify-between gap-6 p-6 rounded-xl shadow-md">
+        <div class="flex items-center justify-between gap-4">
+        <img src="" alt="" class="h-24 w-24 rounded-full bg-gray-700">
+        <div>
+            <h1 class="font-bold text-3xl text-gray-700">Mohamed ahmed</h1>
+            <span class="text-blue-800 bg-blue-200 inline-block rounded-full py-1 px-2 font-semibold text-sm shadow-md">Science teacher</span>
+        </div>
+        </div>
+        <button class="bg-blue-600 p-4 rounded-xl text-white font-medium hover:bg-blue-700 transition duration-300">Create an exam</button>
+    </div>
+
+    <!-- second part -->
+     <div class="grid grid-cols-3 gap-8 rounded-xl items-center justify-center">
+        <div class="col-span-1 bg-white rounded-lg shadow-md p-6 border-r-4 border-blue-500">
+            <p class="text-gray-600">Number of exams</p>
+            <p class="text-3xl font-bold">5</p>
+        </div>
+        <div class="col-span-1 bg-white rounded-lg shadow-md p-6 border-r-4 border-blue-500">
+            <p class="text-gray-600">Number of students</p>
+            <p class="text-3xl font-bold">24</p>
+        </div>
+        <div class="col-span-1 bg-white rounded-lg shadow-md p-6 border-r-4 border-blue-500">
+            <p class="text-gray-600">Average of degrees</p>
+            <p class="text-3xl font-bold">70%</p>
+        </div>
+     </div>
+
+     <!-- third part -->
+      <div class="bg-white rounded-xl shadow-md">
+        <div class="p-4">
+        <h1 class="font-sans text-gray-700 font-bold text-xl">Current Exams</h1>
+        </div>
+
+        <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left bg-white text-sm text-gray-500">
+        
+        <thead class="bg-gray-100 text-gray-700">
+            <tr>
+                <th class="px-6 py-4 font-bold">EXAM NAME</th>
+                <th class="px-6 py-4 font-bold">DURATION</th>
+                <th class="px-6 py-4 font-bold">DIFFICULTY</th>
+                <th class="px-6 py-4 font-bold">ACTIONS</th>
+            </tr>
+        </thead>
+        
+        <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-70 transition duration-300">
+                <th class="px-6 py-4">
+                    Animal
+                </th>
+
+                <th class="px-6 py-4">
+                    30 Min
+                </th>
+
+                <th class="px-6 py-4">
+                    <span class="text-white bg-green-400 px-2 py-1 rounded-xl hover:text-green-800 shadow-md hover:shadow-green-800 transition duration-300">Easy</span>
+                </th>
+
+                <th class="px-6 py-4 flex gap-8">
+                    <button class="text-blue-500 hover:text-blue-700 duration-300">Edit</button>
+                    <button class="text-red-500 hover:text-red-700 duration-300">Delete</button>
+                    <button class="text-green-500 hover:text-green-700 duration-300">Result</button>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+      </div>
+    </div>
+</body>
+</html>
