@@ -5,26 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Register</title>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/student.js"></script>
+    <script type="module" src="./js/rejuster.js"></script>
+    <script type="module" src="./js/imgApi.js"></script>
+
 </head>
 <body class="w-full h-screen bg-gray-100 flex justify-center items-center">
     <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-xl">
         <h2 class="text-blue-600 text-2xl text-center font-bold mb-4 ">Animal Expert Quiz - Student Sign Up</h2>
-        <form id="formRegister" action="" method="post">
+        <form  action="" >
             <div>
+                <div  class="hidden name rounded-xl text-red-700 "> </div>
                 <label for="" class="block text-gray-700 font-medium mb-2">username</label>
-                <input type="text" class="w-full bg-white rounded-xl border border-gray-300 px-4 py-2 focus:outline-none focus:border-blue-300 focus:ring-2" placeholder="Enter your name">
+                <input type="text" id="name" class="w-full bg-white rounded-xl border border-gray-300 px-4 py-2 focus:outline-none focus:border-blue-300 focus:ring-2" placeholder="Enter your name">
             </div>
             <div>
+                <div class="hidden password rounded-xl text-red-700 "> </div>
                 <label for="" class="block text-gray-700 font-medium mb-2">Password</label>
-                <input type="password" class="bg-white w-full rounded-xl px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-300 focus:ring-2" placeholder="Password">
+                <input type="password" id="password" class="bg-white w-full rounded-xl px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-300 focus:ring-2" placeholder="Password">
             </div>
             <div>
+                <div class="hidden mobile rounded-xl text-red-700 "> </div>
                 <label for="" class="block text-gray-700 font-medium mb-2">Mobile number</label>
-                <input type="number" class="bg-white w-full rounded-xl px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-300 focus:ring-2" placeholder="Mobile number">
+                <input type="number" id="mobile" class="bg-white w-full rounded-xl px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-300 focus:ring-2" placeholder="Mobile number">
             </div>
             <div>
+                <div class="hidden grade rounded-xl text-red-700 "> </div>
                 <label for="" class="block text-gray-700 font-medium mb-2">Student grade</label>
-                <select name="" id="" class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:border-blue-300 focus:ring-2">
+                <select id="grade" name="" id="" class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:border-blue-300 focus:ring-2">
                     <option value="text-gray-600">Select your grade</option>
                     <option value="1">Grade 1</option>
                     <option value="2">Grade 2</option>
@@ -32,12 +41,13 @@
                 </select>
             </div>
             <div>
+                <div class="hidden img rounded-xl text-red-700 "> </div>
                 <label for="" class="block text-gray-700 font-medium mb-2">Insert your image</label>
-                <input type="file" class="block w-full text-sm text-slate-500 border border-gray-300 rounded-xl
+                <input id="img" type="file" class="block w-full text-sm text-slate-500 border border-gray-300 rounded-xl
                 file:rounded-full file:text-blue-500 file:bg-white file:m-2 file:p-2 file:border 0 file: hover:border-gray-300 file:font-semibold
                 ">
             </div>
-            <button class="w-full bg-blue-600 text-white font-bold text-center rounded-xl shadow-lg py-2 mt-4 hover:bg-blue-700 transition duration-300">Register</button>
+            <button class="w-full bg-blue-600 text-white font-bold text-center rounded-xl shadow-lg py-2 mt-4 hover:bg-blue-700 transition duration-300" >Register</button>
         </form>
     </div>
 </body>
