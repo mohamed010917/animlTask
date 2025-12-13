@@ -15,24 +15,26 @@ if(localStorage.getItem("isLogedIn") === "true" ){
 const form = document.querySelector('form');
 form.onsubmit = function(e)
 {
- e.preventDefault();
-let userNameInput=document.getElementById('inputName').value;
-let passwordInput=document.getElementById('inputPassword').value;
+    e.preventDefault();
+    let userNameInput=document.getElementById('inputName').value;
+    let passwordInput=document.getElementById('inputPassword').value;
 
-let studentFound= allStudents.find((e)=>e.name==userNameInput && e.password==passwordInput)
-console.log(studentFound);
-    if(studentFound)
-        {
-            localStorage.setItem("student",JSON.stringify(studentFound));
-            window.location.href="studentProfile.html";
-            return;
-        }
+    let studentFound= allStudents.find((e)=>e.name==userNameInput && e.password==passwordInput)
+    console.log(studentFound);
+        if(studentFound)
+            {
+                localStorage.setItem("student",JSON.stringify(studentFound));
+                localStorage.setItem("isLogedIn" , "true");
+                window.location.href="studentProfile.html";
+                return;
+            }
 
-let teacherFound=allTeachers.find((t)=>t.name==userNameInput && t.password==passwordInput)
-if(teacherFound)
+    let teacherFound=allTeachers.find((t)=>t.name==userNameInput && t.password==passwordInput)
+    if(teacherFound)
     {
         localStorage.setItem("teacher", JSON.stringify(teacherFound));
         window.location.href="teacher.html";
+        localStorage.setItem("isLogedIn" , "true");
         return;
     }
     let wrongUserName=document.getElementById('wrongUserName');
