@@ -19,10 +19,10 @@ if(localStorage.getItem("isLogedIn") === "true" ){
 
 
 const faldtion = function(name , password , mobile , imgurl , grade ,students){
-    console.log(students) ;
+   
     const nameError = document.querySelector(".name");
     const passwordError = document.querySelector(".password");
-    const mobileError = document.querySelector(".mobile");
+    const mobileError = document.querySelector(".mobileError");
     const imgurlError = document.querySelector(".imgurl");
     const gradeError = document.querySelector(".grade");
     
@@ -54,11 +54,11 @@ const faldtion = function(name , password , mobile , imgurl , grade ,students){
     if(mobile === ""){
         mobileError.textContent = "Mobile number is required";
         isValid = false;
-        passwordError.classList.remove("hidden") ;
+        mobileError.classList.remove("hidden") ;
     } else if (!egyptMobilePattern.test(mobile)) {
         mobileError.textContent = "Invalid Egyptian mobile number";
         isValid = false;
-        passwordError.classList.remove("hidden") ;
+        mobileError.classList.remove("hidden") ;
     }
 
     if(imgurl === ""){
@@ -76,8 +76,14 @@ const faldtion = function(name , password , mobile , imgurl , grade ,students){
         isValid = false;
          grade.classList.remove("hidden") ;
     }
+
+    if(imgurl === undefined){
+        imgurlError.textContent = "Image upload failed";
+        isValid = false;
+        imgurlError.classList.remove("hidden") ;
+    }
     if(!isValid){
-    
+        console.log("i am from isvalid" , isValid) ;
         setTimeout(() => {
             nameError.classList.add("hidden") ;
             passwordError.classList.add("hidden") ;
@@ -90,8 +96,11 @@ const faldtion = function(name , password , mobile , imgurl , grade ,students){
             imgurlError.textContent = "";
             gradeError.textContent = "";
         }, 5000);
+        return isValid ;
+    }else{
+
+        return isValid;
     }
-    return isValid;
 
 }
 
@@ -104,11 +113,12 @@ const rejuster = async function(){
     const grade = document.getElementById("grade").value;
     let imgUrl = await ImgUplode(img) ;
    
-    
+
 
     // if is a user
-    if(  faldtion(name , password , mobile , imgUrl.url , grade , students) ){
-        const student = new Student(name , password ,mobile , imgUrl.url , grade , Date.now() );
+    if(  faldtion(name , password , mobile , imgUrl , grade , students) ){
+        console.log("i am from faldtion") ;
+        const student = new Student(name , password ,mobile , imgUrl.display_url , grade , Date.now() );
         fetch("http://localhost:3000/students" , {
             method : "POST",
             headers : {
@@ -135,5 +145,6 @@ const rejuster = async function(){
 
  Rejuster.onsubmit = function(e){
     e.preventDefault();
+    console.log("i am from onsubmit") ;
     rejuster();
  }

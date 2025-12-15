@@ -4,6 +4,7 @@ import ImgUplode from "./imgApi.js";
 import { allStudents } from "./main.js";
 
 const exam = new Exam();
+exam.id = Math.floor(Math.random() * 1000000000);
 
 async function fetchStudents() {
     let students = await allStudents();
@@ -112,8 +113,9 @@ const createExam = function(){
 
     exam.name = examTitle;
     exam.duration = Number(examDuration);
-    exam.teacherId = "1";
+    exam.teacherId = JSON.parse( localStorage.getItem("teacher")).id;
     exam.questions = [];
+    exam.data = new Date().toLocaleDateString();
 
     AddquestionToExam(countQustion);
 }
@@ -237,7 +239,14 @@ const AddStudentToExam = async function(){
             await fetch('http://localhost:3000/questions',{
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
-                body:JSON.stringify(q)
+                body:JSON.stringify({
+                    examId: exam.id,
+                    text: q.text,
+                    choices: q.choices,
+                    correctAnswer: q.correctAnswer,
+                    score: q.score,
+                    image: q.image || null
+                })
             });
         }
 
@@ -245,7 +254,12 @@ const AddStudentToExam = async function(){
             await fetch('http://localhost:3000/exam_students',{
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
-                body:JSON.stringify(es)
+                body:JSON.stringify({
+                    examId: es.examId,
+                    studentId: es.studentId,
+                    status: es.status ,
+                    id: Math.floor(Math.random() * 1000000) 
+                })
             });
         }
 
