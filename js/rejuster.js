@@ -18,7 +18,8 @@ if(localStorage.getItem("isLogedIn") === "true" ){
 
 
 
-const faldtion = function(name , password , mobile , imgurl , grade){
+const faldtion = function(name , password , mobile , imgurl , grade ,students){
+    console.log(students) ;
     const nameError = document.querySelector(".name");
     const passwordError = document.querySelector(".password");
     const mobileError = document.querySelector(".mobile");
@@ -30,7 +31,7 @@ const faldtion = function(name , password , mobile , imgurl , grade){
         nameError.textContent = "Name is required";
         isValid = false;
         nameError.classList.remove("hidden") ;
-    }else if(allStudents.find(s => s.name === name)){
+    }else if(students.find(s => s.name === name)){
         nameError.textContent = "Name is already taken";
         isValid = false;
          nameError.classList.remove("hidden") ;
@@ -95,6 +96,7 @@ const faldtion = function(name , password , mobile , imgurl , grade){
 }
 
 const rejuster = async function(){
+    const students = await allStudents() ;
     const name = document.getElementById("name").value;
     const password = document.getElementById("password").value;
     const mobile = document.getElementById("mobile").value;
@@ -105,14 +107,24 @@ const rejuster = async function(){
     
 
     // if is a user
-    if(  faldtion(name , password , mobile , imgUrl.url , grade)){
-        const student = new Student(name , password ,mobile , imgUrl.url , grade , Date.now());
-        allStudents.push(student);
-        localStorage.setItem("allStudents" , JSON.stringify(allStudents));
-        localStorage.setItem("student" , JSON.stringify(student));
-        localStorage.setItem("isLogedIn" , "true");
-        console.log(imgUrl)
-        location.href = "studentProfile.html";
+    if(  faldtion(name , password , mobile , imgUrl.url , grade , students) ){
+        const student = new Student(name , password ,mobile , imgUrl.url , grade , Date.now() );
+        fetch("http://localhost:3000/students" , {
+            method : "POST",
+            headers : {
+                "Content-Type" : "application/json"
+            },
+            body : JSON.stringify(student)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log("i am from featch " ,data) ;
+            localStorage.setItem("student" , JSON.stringify(data));
+            localStorage.setItem("isLogedIn" , "true");
+            location.href = "studentProfile.html";
+        })
+        .catch(err => console.log(err)) ;
+   
     }
 }
 

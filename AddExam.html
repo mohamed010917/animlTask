@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/techer.js"></script>
+    <script type="module" src="./js/AddExam.js"></script>
+    <style>
+        .sidebar-active-link {
+            background-color: theme('colors.indigo.600');
+            border-right: 5px solid theme('colors.amber.400');
+        }
+        .input-group label {
+            margin-bottom: 8px;
+            font-weight: 600; 
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex min-h-screen">       
+        <main class="flex-1 p-6 lg:p-10">
+            <div class="bg-white p-6 lg:p-8 rounded-lg shadow-xl">
+                <form  id="examForm">
+                    <!-- Step 1: Exam Info -->
+                    <div id="ExamInfo" class="flex step flex-col md:flex-row gap-6 mb-6">
+                        <div class="input-group flex-1">
+                            <div class="hidden nameError rounded-xl text-red-700"> </div>
+                            <label for="exam-name" class="block text-sm text-gray-700">Exam Name</label>
+                            <input type="text" id="exam-name" name="examName" placeholder="mini Exam" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" novalidate>
+                        </div>
+                        <div class="input-group flex-1">
+                            <div class="hidden duretionError rounded-xl text-red-700"> </div>
+                            <label for="exam-duration" class="block text-sm text-gray-700">Duration</label>
+                            <input type="number" id="exam-duration" name="examDuration" placeholder=": 30" min="15" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" novalidate>
+                        </div>
+                        <div class="input-group flex-1">
+                            <div class="hidden countError rounded-xl text-red-700"> </div>
+                            <label for="exam-question-count" class="block text-sm text-gray-700">Count of Questions</label>
+                            <input type="number" id="exam-question-count" name="examQuestionCount" placeholder=": 30" min="1" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" novalidate>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Add Question -->
+                    <div class="relative step hidden pt-4 border-t border-gray-200">
+                        <h4 class="text-lg font-semibold text-indigo-700 border-r-4 border-indigo-700 pr-3 my-4">
+                            Add New Question
+                        </h4>
+                        <div class="error questionError hidden rounded-xl text-red-700"></div>
+                        <div class="input-group mb-4">
+                            <label for="question-text" class="block text-sm text-gray-700">Question Text</label>
+                            <textarea id="question-text" name="questionText" rows="3" class="mt-1 block w-full p-3 border border-gray-300 rounded-md resize-y focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" novalidate></textarea>
+                        </div>
+
+                        <div class="input-group mb-6">
+                            <label for="question-image" class="block text-sm text-gray-700">Image</label>
+                            <div class="flex items-center mt-1 border border-gray-300 rounded-md overflow-hidden">
+                                <input type="file" id="question-image" name="questionImage" class="hidden">
+                                <label for="question-image" class="bg-gray-200 text-gray-700 py-2 px-4 cursor-pointer hover:bg-gray-300 transition duration-150 border-l border-gray-300">
+                                    Choose File
+                                </label>
+                                <span class="text-sm text-gray-500 p-2 truncate" id="file-name">No file chosen</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div class="input-group">
+                                <label for="choice-a" class="block text-sm text-gray-700">Choice 1</label>
+                                <input type="text" id="choice-a" name="choiceA" novalidate class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                            </div>
+                            <div class="input-group">
+                                <label for="choice-b" class="block text-sm text-gray-700">Choice 2</label>
+                                <input type="text" id="choice-b" name="choiceB" novalidate class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                            </div>
+                            <div class="input-group">
+                                <label for="choice-c" class="block text-sm text-gray-700">Choice 3</label>
+                                <input type="text" id="choice-c" name="choiceC" novalidate class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                            </div>
+                            <div class="input-group">
+                                <label for="choice-d" class="block text-sm text-gray-700">Choice 4</label>
+                                <input type="text" id="choice-d" name="choiceD" novalidate class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row gap-6 mb-6">
+                            <div class="input-group flex-1">
+                                <label for="correct-answer" class="block text-sm text-gray-700">Correct Answer</label>
+                                <select id="correct-answer" name="correctAnswer" class="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-white" novalidate>
+                                    <option value="a">Choice 1</option>
+                                    <option value="b">Choice 2</option>
+                                    <option value="c">Choice 3</option>
+                                    <option value="d">Choice 4</option>
+                                </select>
+                            </div>
+                            <div class="input-group flex-1">
+                                <label for="score" class="block text-sm text-gray-700">Score</label>
+                                <input type="number" id="score" name="score" placeholder="5" min="1" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" novalidate>
+                            </div>
+                            <div class="input-group flex-1">
+                                <label for="difficulty" class="block text-sm text-gray-700">Level</label>
+                                <select name="difficulty" id="difficulty" class="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-green-50 text-green-700 font-bold text-center" novalidate>
+                                    <option value="" disabled selected>Select Level</option>
+                                    <option value="easy">Easy</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="hard">Hard</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Add Students -->
+                    <div class="step hidden mt-6">
+                        <div class="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow">
+                            <h1 class="text-2xl font-bold mb-6 text-center">Add Students</h1>
+
+                            <div class="flex flex-wrap gap-4 mb-6">
+                                <button id="allStudent" type="button" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                    Choice All Students
+                                </button>
+                                <select id="ByGrade" name="ByGrade" class="border px-4 py-2 rounded">
+                                    <option value="">Grade</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+
+                            <div id="students" class="grid md:grid-cols-2 gap-4"></div>
+
+                              <button type="submit" id="Ok" 
+                                    class="mt-6 w-full bg-green-600 text-white py-3  rounded-lg hover:bg-green-700">
+                                    Submit
+                                </button>
+                      
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Navigation buttons -->
+                <div class="flex justify-between items-center mt-6 ">
+                 
+                    <button class="pt-2 pb-2 pr-6 pl-6 bg-green-500 text-white" id="next" type="button">Next</button>
+                    <button class="pt-2 pb-2 pr-6 pl-6 bg-green-500 text-white button-add-questions hidden" id="next-question-button" type="button">Add Next Question</button>
+                    <button class="pt-2 pb-2 pr-6 pl-6 bg-green-500 text-white" id="back" type="button">Back</button>
+                 
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Overlay -->
+    <div class="fixed overlay inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6 text-center">
+            <div class="mx-auto mb-4 w-16 h-16 flex items-center justify-center rounded-full bg-green-100">
+                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h2 class="text-xl font-bold mb-6">Exam Added Successfully</h2>
+            <div class="flex gap-4">
+                <a href="teacher.htm" class="flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">Add Another</a>
+                <a href="teacherExam.html" class="flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition">View Exam</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

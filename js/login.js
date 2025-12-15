@@ -1,5 +1,8 @@
-import { allStudents } from './main.js';
-import {allTeachers} from './main.js';
+
+import {allTeachers , allStudents} from './main.js';
+
+
+
 
 if( ! localStorage.getItem("student") == 'null'){
     location.href = "studentProfile.html";
@@ -13,13 +16,15 @@ if(localStorage.getItem("isLogedIn") === "true" ){
 
 // let buttonLogin=document.querySelector('button');
 const form = document.querySelector('form');
-form.onsubmit = function(e)
+form.onsubmit =async function(e)
 {
     e.preventDefault();
     let userNameInput=document.getElementById('inputName').value;
     let passwordInput=document.getElementById('inputPassword').value;
+    const students = await allStudents() || [];
+    const teachers = await allTeachers() || [];
 
-    let studentFound= allStudents.find((e)=>e.name==userNameInput && e.password==passwordInput)
+    let studentFound= students.find((e)=>e.name==userNameInput && e.password==passwordInput)
     console.log(studentFound);
         if(studentFound)
             {
@@ -29,7 +34,7 @@ form.onsubmit = function(e)
                 return;
             }
 
-    let teacherFound=allTeachers.find((t)=>t.name==userNameInput && t.password==passwordInput)
+    let teacherFound=teachers.find((t)=>t.name==userNameInput && t.password==passwordInput)
     if(teacherFound)
     {
         localStorage.setItem("teacher", JSON.stringify(teacherFound));

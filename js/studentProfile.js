@@ -1,6 +1,8 @@
 if(localStorage.getItem("student") == 'null' || localStorage.getItem("student") === null ){
     location.href = "index.html";
 }
+
+
 const studentData = JSON.parse(localStorage.getItem("student"));
 console.log(studentData) ;
 const studentDiv = document.getElementById("Student");
@@ -28,19 +30,22 @@ const AddTableQuizzeFinsh = function(){
 }
 AddTableQuizzeFinsh() ;
 
-const  NextQuizze = function(){
+const  NextQuizze =async function(){
     const nextExam = document.getElementById("NextExam"); 
-    const quizzes = studentData.nextQuizzes || [];
-    quizzes.forEach(quiz => {
+    const quizzes = await allExams() ;
+    const unfinshQuizzes = quizzes.filter(quiz => !quiz.finsh && quize);
+    unfinshQuizzes.forEach(quiz => {
         const quizDiv = document.createElement("div");
         quizDiv.className = "p-4 border border-gray-300 dark:border-gray-700 rounded-lg flex justify-between items-center mb-4";
         quizDiv.innerHTML = `
             <span class="font-medium">${quiz.title}</span>
-            <button class="px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Start</button>
+            <a class="px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Start</a>
         `;
         nextExam.appendChild(quizDiv);
     });
         
 }
 
+
+NextQuizze() ;
  

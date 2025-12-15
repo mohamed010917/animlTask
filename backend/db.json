@@ -1,0 +1,165 @@
+{
+  "students": [
+    {
+      "id": "1765635716081",
+      "name": "Mohamed",
+      "password": "MTIzNDU2Nzg5",
+      "mobile": "01091786649",
+      "imgurl": "https://i.ibb.co/Zzk4BZF0/Screenshot-from-2025-11-19-13-22-10.png",
+      "grade": "1",
+      "role": "student"
+    },
+    {
+      "id": "1765635716082",
+      "name": "Ahmed",
+      "password": "OTg3NjU0MzIx",
+      "mobile": "01012345678",
+      "imgurl": "https://i.ibb.co/Zzk4BZF0/Screenshot-from-2025-11-19-13-22-10.png",
+      "grade": "2",
+      "role": "student"
+    },
+    {
+      "id": "1765635716083",
+      "name": "Sara",
+      "password": "cGFzc3dvcmQxMjM=",
+      "mobile": "01087654321",
+      "imgurl": "https://i.ibb.co/Zzk4BZF0/Screenshot-from-2025-11-19-13-22-10.png",
+      "grade": "1",
+      "role": "student"
+    },
+    {
+      "id": "1765635716084",
+      "name": "Laila",
+      "password": "bXlwYXNzd29yZA==",
+      "mobile": "01176563571",
+      "imgurl": "https://i.ibb.co/Zzk4BZF0/Screenshot-from-2025-11-19-13-22-10.png",
+      "grade": "3",
+      "role": "student"
+    }
+  ],
+  "teachers": [
+    {
+      "id": "1",
+      "name": "Eman",
+      "password": "MTIzNDU2"
+    }
+  ],
+  "exams": [
+    {
+      "id": "8f92",
+      "name": "Hadley Garcia",
+      "duration": 75,
+      "teacherId": "1"
+    },
+    {
+      "id": "542c",
+      "name": "Zahir Berg",
+      "duration": 16,
+      "teacherId": "1"
+    },
+    {
+      "id": "6284",
+      "name": "Lionel Velazquez",
+      "duration": 62,
+      "teacherId": "1"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "examId": "8f92",
+      "text": "Irure maiores fugiat",
+      "choices": {
+        "a": "Explicabo Esse sun",
+        "b": "Aut est dicta sed vo",
+        "c": "Quam asperiores libe",
+        "d": "Fugiat veritatis ani"
+      },
+      "correctAnswer": "b",
+      "score": 9
+    },
+    {
+      "id": "q2",
+      "examId": "8f92",
+      "text": "Tempora excepturi eu",
+      "choices": {
+        "a": "Exercitation quidem",
+        "b": "Eos tempor culpa ni",
+        "c": "Pariatur Officiis l",
+        "d": "Laboris sapiente par"
+      },
+      "correctAnswer": "a",
+      "score": 7
+    },
+    {
+      "id": "eb89",
+      "text": "Perferendis ut nihil",
+      "choices": {
+        "a": "Hic quo nesciunt vo",
+        "b": "Dolor ullamco minus ",
+        "c": "Dolores officiis fac",
+        "d": "Dignissimos nostrum "
+      },
+      "correctAnswer": "a",
+      "score": 18,
+      "image": null
+    },
+    {
+      "id": "fbbe",
+      "text": "Nulla ipsa deleniti",
+      "choices": {
+        "a": "Aliquip hic pariatur",
+        "b": "Nesciunt ut repudia",
+        "c": "Itaque illum dolore",
+        "d": "Sed dicta eveniet e"
+      },
+      "correctAnswer": "a",
+      "score": 2,
+      "image": null
+    }
+  ],
+  "exam_students": [
+    {
+      "examId": "8f92",
+      "studentId": "1765635716081",
+      "status": "finished"
+    },
+    {
+      "examId": "8f92",
+      "studentId": "1765635716083",
+      "status": "assigned"
+    },
+    {
+      "id": "ca05",
+      "studentId": "1765635716081",
+      "status": "assigned"
+    },
+    {
+      "id": "3517",
+      "studentId": "1765635716082",
+      "status": "assigned"
+    },
+    {
+      "id": "e346",
+      "studentId": "1765635716083",
+      "status": "assigned"
+    },
+    {
+      "id": "6179",
+      "studentId": "1765635716084",
+      "status": "assigned"
+    }
+  ],
+  "results": [
+    {
+      "examId": "8f92",
+      "studentId": "1765635716081",
+      "score": 16,
+      "answers": {
+        "q1": "b",
+        "q2": "a"
+      },
+      "finishedAt": "2025-12-15T12:30:00"
+    }
+  ]
+}

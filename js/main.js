@@ -2,14 +2,28 @@
     darkMode: 'class'
   }
 
+const allStudents = async function () {
+    let res = await fetch("http://localhost:3000/students");
+    let data = await res.json();
+    console.log(data);
+    return data;
+}
 
-const allStudents = localStorage.getItem("allStudents") ? 
-JSON.parse(localStorage.getItem("allStudents")) : [];
+const allTeachers = async function () {
+    let res = await fetch("http://localhost:3000/teachers");
+    let data = await res.json();
+    console.log(data);
+    return data;
+}
 
 
-const allTeachers = localStorage.getItem("allTeachers") ? 
-JSON.parse(localStorage.getItem("allTeachers")) : [];
 
+const allExams = async function () {
+    let res = await fetch("http://localhost:3000/exams");
+    let data = await res.json();
+    console.log(data);
+    return data;
+}
 
  const darkModeToggle = document.getElementById("darkModeToggle");
 
@@ -53,5 +67,5 @@ if(Logout){
 }
 
 
-export {allStudents , allTeachers};
+export {allStudents , allTeachers , allExams};
 
