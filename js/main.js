@@ -61,6 +61,7 @@ if(Logout){
 
     Logout.addEventListener("click", function() {
        localStorage.removeItem("student");
+       localStorage.removeItem("teacher");
        localStorage.removeItem("isLogedIn")
         window.location.href = "index.html";
     });

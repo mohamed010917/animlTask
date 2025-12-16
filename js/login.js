@@ -38,7 +38,7 @@ form.onsubmit =async function(e)
     if(teacherFound)
     {
         localStorage.setItem("teacher", JSON.stringify(teacherFound));
-        window.location.href="teacher.html";
+        window.location.href="TecherProfile.html";
         localStorage.setItem("isLogedIn" , "true");
         return;
     }

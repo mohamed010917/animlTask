@@ -213,7 +213,7 @@ const AddStudentToExam = async function(){
 
     examForm.onsubmit = null;
     examForm.onsubmit = async function(e){
-        e.preventDefault();
+       
         allCheckboxes.forEach(checkbox => {
             if(checkbox.checked){
                 selectedStudents.push({
