@@ -85,7 +85,8 @@
     {
       "id": "1",
       "name": "Eman",
-      "password": "MTIzNDU2"
+      "password": "MTIzNDU2",
+        "imgurl": "https://i.ibb.co/Zzk4BZF0/Screenshot-from-2025-11-19-13-22-10.png"
     }
   ],
   "exams": [
@@ -317,7 +318,7 @@
       "score": 16,
       "answers": {
         "q1": "b",
-        "q2": "a"
+        "q2": "c"
       },
       
       "finishedAt": "2025-12-15T12:30:00",
