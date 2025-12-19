@@ -27,7 +27,6 @@ let countmidd = 0 ;
 
 const exam = new Exam();
 let total = 0 ;
-exam.id = Math.floor(Math.random() * 1000000000);
 
 async function fetchStudents() {
     let students = await allStudents();
@@ -202,6 +201,7 @@ const AddquestionToExam = function(count){
             return errors;
          }
         if(errors){
+            console.log("i am error") ;
             setTimeout(() => {
                 questionError.classList.add('hidden');
                 questionError.textContent = "";
@@ -281,10 +281,8 @@ const AddStudentToExam = async function(){
                     examId: es.examId,
                     studentId: es.studentId,
                     status: es.status ,
-
-                    id: Math.floor(Math.random() * 1000000) + ""
-                })
-            });
+                    id: Date.now().toString(36) + Math.random().toString(36).slice(2) 
+            })});
         }
 
         location.href = `ExamShow.html?id=${exam.id}`;
@@ -518,5 +516,7 @@ const deleteElement = function(question , QuestionDiv) {
       exam.questions = exam.questions.filter(e => e.id != question.id) ;
       QuestionDiv.remove() ;
 }
+
+
 
 
