@@ -213,7 +213,7 @@ const AddStudentToExam = async function(){
 
     examForm.onsubmit = null;
     examForm.onsubmit = async function(e){
-        e.preventDefault();
+        e.preventDefault();//
         allCheckboxes.forEach(checkbox => {
             if(checkbox.checked){
                 selectedStudents.push({
@@ -228,7 +228,7 @@ const AddStudentToExam = async function(){
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({
-                id: exam.id,
+                id: exam.id +"",
                 name: exam.name,
                 duration: exam.duration,
                 teacherId: exam.teacherId
@@ -258,12 +258,12 @@ const AddStudentToExam = async function(){
                     examId: es.examId,
                     studentId: es.studentId,
                     status: es.status ,
-                    id: Math.floor(Math.random() * 1000000) 
+                    id: Math.floor(Math.random() * 1000000)+'' 
                 })
             });
         }
 
-        location.href = "ExamShow.html";
+        location.href = `ExamShow.html?id=${exam.id}`;
     };
 
     const allStudentButton = document.getElementById('allStudent');
