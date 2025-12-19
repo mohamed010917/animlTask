@@ -152,12 +152,16 @@ const AddquestionToExam = function(count){
         const score = document.getElementById('score');
         const img = document.getElementById('question-image');
         const difficulty = document.getElementById("difficulty") ;
-        let imgUrl = await ImgUplode(img);
+        const form = document.querySelector("#examForm") ;
+     
+     
+     
 
         let errors = false;
         let questionError = document.querySelector('.questionError');
         questionError.textContent = "";
 
+        
         if(!/[a-zA-Z]{5,1000}/ig.test(questionText.value)){
             questionError.textContent += "Question text must be greate than 10 leters.";
             questionError.classList.remove('hidden');
@@ -191,6 +195,12 @@ const AddquestionToExam = function(count){
             questionError.classList.remove('hidden');
             errors = true;
         }
+        if (!img.files || img.files.length === 0) {
+            questionError.textContent = "Image file is required";
+            questionError.classList.remove('hidden');
+            errors = true;
+            return errors;
+         }
         if(errors){
             setTimeout(() => {
                 questionError.classList.add('hidden');
@@ -198,22 +208,13 @@ const AddquestionToExam = function(count){
             }, 5000);
             return;
         }
-
-        let question = new Question(questionText.value, choices, correctAnswer.value, Number(score.value));
-        question.examId = exam.id;
-        question.image = imgUrl || null;
-        question.difficulty = difficulty.value ;
+        let imgUrl = await ImgUplode(img);
+        let question = new Question(questionText.value, choices, correctAnswer.value, Number(score.value) ,imgUrl.display_url,  difficulty.value , exam.id);
         exam.questions.push(question);
         total += question.score ;
         
         updateExamPreviwo(question) ;
-        questionText.value = "";
-        choiceA.value = "";
-        choiceB.value = "";
-        choiceC.value = "";
-        choiceD.value = "";
-        correctAnswer.value = "";
-        score.value = "";
+        form.reset();
 
         if(exam.questions.length >= count - 1){
             nextquestionButton.textContent = "Finish Exam";
@@ -268,14 +269,7 @@ const AddStudentToExam = async function(){
             await fetch('http://localhost:3000/questions',{
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
-                body:JSON.stringify({
-                    examId: exam.id ,
-                    text: q.text,
-                    choices: q.choices,
-                    correctAnswer: q.correctAnswer,
-                    score: q.score,
-                    image: q.image || null
-                })
+                body:JSON.stringify(q)
             });
         }
 
@@ -336,6 +330,7 @@ const updateExamPreviwo = function(question){
 
 const model = document.getElementById("model");
 const AddQustionToPreviwe = function (question){
+    console.log(question) ;
     const QuestionDiv = document.createElement("div") ;
     QuestionDiv.className = "question-item bg-gray-50 dark:bg-gray-700 rounded-lg p-4 border border-gray-200 dark:border-gray-600 hover:border-indigo-300 dark:hover:border-indigo-500 transition-colors duration-200";
 
@@ -377,7 +372,9 @@ const AddQustionToPreviwe = function (question){
         
         <div class="question-details mt-4 pt-4 border-t border-gray-200 dark:border-gray-600">
             <div class="space-y-4">
-                    
+            ${
+                question.imgUrl ? `<img src=${  question.imgUrl } alt=${question.text}>` : ""
+            }
                 <div>
                     <h6 class="text-xs font-medium text-gray-500 dark:text-gray-400 mb-2">Choices:</h6>
                     <div class="grid grid-cols-2 gap-2 text-black dark:text-white">
@@ -468,6 +465,7 @@ const OpenModel = function(question , QuestionDiv){
         question.text = modeText.value ;
         question.difficulty = deffModel.value ;
         question.correctAnswer = CorrectModel.value ;
+       
         let choices ={
             "a" : choiceAModel.value ,
             "b" : choiceBModel.value ,
