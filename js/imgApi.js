@@ -20,8 +20,7 @@ const ImgUplode = async function (files) {
     });
 
     let data = await res.json();
-    console.log(data);
-
+  
     let url = data.data;
     return url;
 }

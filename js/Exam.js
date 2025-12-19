@@ -9,12 +9,14 @@ class Exam{
 }
 
 class Question{
-    constructor(text, choices, correctAnswer , score , img){
+    constructor(text, choices, correctAnswer , score , img , difficulty , examId){
         this.text = text;
         this.choices = choices;
         this.correctAnswer = correctAnswer;
         this.score = score;
-        this.img = img ;
+        this.imgUrl = img ;
+        this.difficulty = difficulty ;
+        this.examId = examId ;
     }
 }
 

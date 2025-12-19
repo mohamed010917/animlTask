@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/main.js" type="module"></script>
+    <script src="./js/StudentShowExam.js" type="module"></script>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 dark:text-white min-h-screen">
+
+      <nav class="bg-white dark:bg-gray-800 shadow mb-10">
+            <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+    
+                <!-- Logo -->
+                <a href="studentProfile.html" class="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                    Animal 
+                </a>
+    
+                <button id="Logout" class="bg-red-500 text-white pt-2 pb-2 pr-6 pl-6 rounded-md ml-auto mr-6 cursor-pointer text-2xl">
+                    Logout
+                </button>
+                
+    
+                <!-- Dark Mode Button -->
+                <button 
+                    id="darkModeToggle"
+                    class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-lg shadow hover:bg-gray-300 dark:hover:bg-gray-600"
+                >
+                    🌙 / ☀️
+                </button>
+            </div>
+        </nav>
+    
+
+    <div class="max-w-5xl mx-auto px-4 pb-10">
+
+        <!-- Student Info -->
+        <div id="student" class="bg-white dark:bg-gray-800 rounded-xl shadow p-6 mb-6 flex items-center gap-6">
+            <img src="https://i.pravatar.cc/150?img=12"
+                 class="w-24 h-24 rounded-full border-4 border-blue-500" />
+
+            <div>
+                <h2 class="text-2xl font-bold">Mohamed Ahmed</h2>
+                <p id="grade" class="text-gray-500 dark:text-gray-300">Grade: 3</p>
+                <p id="total-score" class="text-lg font-semibold mt-2">
+                    Total Score:
+                    <span class="text-blue-600 dark:text-blue-400 total">16</span> / <span class="score text-blue-600 dark:text-blue-400">20</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Exam Info -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6 mb-8">
+            <p id="examName" class="text-xl font-bold">Exam: <span></span></p>
+            <p class="text-gray-500 dark:text-gray-300" id="TeacherName">Teacher: <span></span></p>
+            <p class="text-gray-500 dark:text-gray-300" id="ExamDate"> Exam Date: <span></span></p>
+        </div>
+
+        <!-- Questions -->
+        <div id="Question" class="space-y-8">
+
+
+
+        </div>
+
+    </div>
+
+</body>
+</html>

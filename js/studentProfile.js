@@ -32,7 +32,7 @@ const AddTableQuizzeFinsh =async function(){
             <td class="py-3 font-medium">${quiz.title}</td>
             <td class="py-3 text-green-600 font-semibold">${quiz.score}%</td>
             <td class="py-3 text-gray-500 dark:text-gray-300">${quiz.finishedAt}</td>
-            <td class="py-3 text-gray-500 dark:text-gray-300"><a href="Myfinsh.html?id=${quiz.id}" class="px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700">SHow</a></td>
+            <td class="py-3 text-gray-500 dark:text-gray-300"><a href="StudentShhowExam.html?id=${quiz.id}" class="px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700">SHow</a></td>
         `;
         TableBody.appendChild(row);
     });
@@ -69,3 +69,30 @@ const  NextQuizze =async function(){
 
 NextQuizze() ;
  
+
+// async function getExam(id){
+//     let response = await fetch(`http://localhost:3000/exams/${id}`);
+//         let exam = await response.json();
+
+//         console.log(exam);
+// }
+
+// getExam('8f92');
+
+// async function GetStudent(id){
+//     let response = await fetch(`http://localhost:3000/students/${id}`);
+//         let student = await response.json();
+
+//         console.log(student);
+// }
+
+// GetStudent('1765821131384');
+
+// async function GetTeacher(id){
+//     let response = await fetch(`http://localhost:3000/teachers/${id}`);
+//         let teacher = await response.json();
+
+//         console.log(teacher);
+// }
+
+// GetTeacher('101');
