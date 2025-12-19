@@ -121,7 +121,6 @@
       "teacherId": "1"
     },
     {
-
       "id": "993886402",
       "name": "Virginia Kim",
       "duration": 54,
@@ -170,21 +169,18 @@
       "teacherId": "1"
     },
     {
-      "id": "819564039",
-      "name": "Azalia Elliott",
-      "duration": 18,
-      "teacherId": "1"
+      "name": "Irma Elliott mohamed",
+      "duration": "18",
+      "id": "819564039"
     },
     {
-      "id": "mjct6v07qgxtobqrz6n",
-      "name": "Irma Elliott",
-      "duration": 51,
-      "teacherId": "1"
+      "name": "Irma Elliott  ةة",
+      "duration": "51",
+      "id": "mjct6v07qgxtobqrz6n"
     }
   ],
   "questions": [
     {
-
       "id": "52c6",
       "text": "Sit nulla sit eius q",
       "choices": {
@@ -231,9 +227,9 @@
     },
     {
       "id": "e446",
-      "text": "Ipsa quae est et c ,bgb,gobgb,",
+      "text": "mohame",
       "choices": {
-        "a": "Accusamus quo nobis ",
+        "a": "Accusamus quo nobis",
         "b": "Mollit voluptas fuga",
         "c": "Fuga A similique es",
         "d": "Magnam qui cupidatat"
@@ -275,46 +271,107 @@
       "examId": 819564039
     },
     {
-      "id": "mjct78oscogn86agbtj",
-      "text": "Doloremque repudiand",
+      "id": "1be3",
+      "examId": "mjct6v07qgxtobqrz6n",
+      "text": " ahmed mohamed",
       "choices": {
-        "a": "Cupiditate nisi in a",
-        "b": "Incididunt est aut q",
-        "c": "Totam assumenda dist",
-        "d": "Nihil aut doloribus "
-      },
-      "correctAnswer": "c",
-      "score": 3,
-      "difficulty": "easy",
-      "examId": "mjct6v07qgxtobqrz6n"
-    },
-    {
-      "id": "mjct7uyc95cutgbpaah",
-      "text": "Perspiciatis beatae",
-      "choices": {
-        "a": "In libero amet faci",
-        "b": "Dolore illum id eiu",
-        "c": "Ipsum voluptatem et",
-        "d": "Ipsum ex magni volu"
+        "a": "Veritatis soluta rer",
+        "b": "Reprehenderit cillu",
+        "c": "Excepturi laboriosam",
+        "d": "Ullamco facilis atqu"
       },
       "correctAnswer": "b",
-      "score": 9,
-      "difficulty": "easy",
-      "examId": "mjct6v07qgxtobqrz6n"
+      "score": {},
+      "difficulty": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {}
+      }
     },
     {
-      "id": "mjct80arh2bdvl0yw8t",
-      "text": "Veniam lorem sapien",
+      "id": "21ff",
+      "examId": "mjct6v07qgxtobqrz6n",
+      "text": "Autem maiores et qui",
       "choices": {
-        "a": "Qui molestias do eni",
-        "b": "Voluptas nihil praes",
-        "c": "Mollit deleniti haru",
-        "d": "A non dolore debitis"
+        "a": "Aut modi sed eum ips",
+        "b": "Qui rerum qui fugit",
+        "c": "Et facilis sit labor",
+        "d": "Quibusdam ut sunt ac"
       },
       "correctAnswer": "d",
-      "score": 2,
-      "difficulty": "hard",
-      "examId": "mjct6v07qgxtobqrz6n"
+      "score": "Veniam quas suscipi",
+      "difficulty": "easy"
+    },
+    {
+      "id": "f23b",
+      "examId": "mjct6v07qgxtobqrz6n",
+      "text": "mohamed ahmed halawa",
+      "choices": {
+        "a": "Eligendi exercitatio",
+        "b": "Ut cillum eius labor",
+        "c": "Eum et vero sunt et",
+        "d": "Proident voluptate "
+      },
+      "correctAnswer": "b",
+      "score": "Architecto nulla omn",
+      "difficulty": "hard"
+    },
+    {
+      "id": "34ff",
+      "examId": "mjct6v07qgxtobqrz6n",
+      "text": "Natus quibusdam ut o",
+      "choices": {
+        "a": "Mollitia quod asperi",
+        "b": "Dolore atque accusan",
+        "c": "Rerum placeat tempo",
+        "d": "Nulla maxime ullam q"
+      },
+      "correctAnswer": "a",
+      "score": "Quod exercitationem ",
+      "difficulty": "medium"
+    },
+    {
+      "id": "f077",
+      "examId": "mjct6v07qgxtobqrz6n",
+      "text": "mohamed nagy",
+      "choices": {
+        "a": "Fugiat qui qui labor",
+        "b": "Adipisci nulla eu au",
+        "c": "Quia occaecat repudi",
+        "d": "Accusantium illo id "
+      },
+      "correctAnswer": "a",
+      "score": "Eos dolores ipsa a",
+      "difficulty": "hard"
+    },
+    {
+      "id": "4f22",
+      "examId": "mjct6v07qgxtobqrz6n",
+      "text": "any",
+      "choices": {
+        "a": "Ullamco ad ipsam ven",
+        "b": "Ex repudiandae ut do",
+        "c": "Nihil ad ullam vitae",
+        "d": "Et aut assumenda hic"
+      },
+      "correctAnswer": "a",
+      "score": "Earum libero quam ve",
+      "difficulty": "medium"
+    },
+    {
+      "id": "c2ec",
+      "examId": "819564039",
+      "text": "مممممممممممممممممممممممممم",
+      "choices": {
+        "a": "Suscipit recusandae",
+        "b": "Alias veniam perspi",
+        "c": "Ut quos consectetur",
+        "d": "Dolor autem error in"
+      },
+      "correctAnswer": "b",
+      "score": 3,
+      "difficulty": "medium"
     }
   ],
   "exam_students": [
@@ -397,7 +454,6 @@
       "status": "assigned"
     },
     {
-
       "id": "796391",
       "examId": 993886402,
       "studentId": "1765821131384",
@@ -536,57 +592,9 @@
       "status": "assigned"
     },
     {
-      "id": "300619",
-      "examId": 819564039,
-      "studentId": "1765635716081",
-      "status": "assigned"
-    },
-    {
-      "id": "831509",
-      "examId": 819564039,
-      "studentId": "1765635716082",
-      "status": "assigned"
-    },
-    {
-      "id": "640745",
-      "examId": 819564039,
-      "studentId": "1765635716083",
-      "status": "assigned"
-    },
-    {
-      "id": "664857",
-      "examId": 819564039,
-      "studentId": "1765635716084",
-      "status": "assigned"
-    },
-    {
-      "id": "385166",
-      "examId": 819564039,
-      "studentId": "1765820724036",
-      "status": "assigned"
-    },
-    {
-      "id": "800987",
-      "examId": 819564039,
-      "studentId": "1765820810679",
-      "status": "assigned"
-    },
-    {
       "id": "808508",
       "examId": 819564039,
       "studentId": "1765821019530",
-      "status": "assigned"
-    },
-    {
-      "id": "209860",
-      "examId": 819564039,
-      "studentId": "1765821131384",
-      "status": "assigned"
-    },
-    {
-      "id": "mjct837jv90rut8fvb",
-      "examId": "mjct6v07qgxtobqrz6n",
-      "studentId": "1765635716081",
       "status": "assigned"
     },
     {
@@ -629,6 +637,111 @@
       "id": "mjct839jhzc65qns1p6",
       "examId": "mjct6v07qgxtobqrz6n",
       "studentId": "1765821131384",
+      "status": "assigned"
+    },
+    {
+      "id": "1765635716081",
+      "name": "Mohamed",
+      "password": "MTIzNDU2Nzg5",
+      "mobile": "01091786649",
+      "imgurl": "https://i.ibb.co/Zzk4BZF0/Screenshot-from-2025-11-19-13-22-10.png",
+      "grade": "1",
+      "role": "student"
+    },
+    {
+      "id": "1765635716081",
+      "name": "Mohamed",
+      "password": "MTIzNDU2Nzg5",
+      "mobile": "01091786649",
+      "imgurl": "https://i.ibb.co/Zzk4BZF0/Screenshot-from-2025-11-19-13-22-10.png",
+      "grade": "1",
+      "role": "student"
+    },
+    {
+      "id": "1765635716081",
+      "name": "Mohamed",
+      "password": "MTIzNDU2Nzg5",
+      "mobile": "01091786649",
+      "imgurl": "https://i.ibb.co/Zzk4BZF0/Screenshot-from-2025-11-19-13-22-10.png",
+      "grade": "1",
+      "role": "student"
+    },
+    {
+      "id": "mjd9mpa4h88vrwlpv5t",
+      "examId": "819564039",
+      "studentId": "1765635716081",
+      "status": "assigned"
+    },
+    {
+      "id": "mjd9mpa50onziz1urgkg",
+      "examId": "819564039",
+      "studentId": "1765635716081",
+      "status": "assigned"
+    },
+    {
+      "id": "mjd9mpa6bwcm5ydnosh",
+      "examId": "819564039",
+      "studentId": "1765635716081",
+      "status": "assigned"
+    },
+    {
+      "id": "mjd9mzsxj6ubhnc8n2h",
+      "examId": "819564039",
+      "studentId": "1765635716081",
+      "status": "assigned"
+    },
+    {
+      "id": "mjd9mzsy8zckeezsqpd",
+      "examId": "819564039",
+      "studentId": "1765635716081",
+      "status": "assigned"
+    },
+    {
+      "id": "mjd9mzt0szdjmll80z",
+      "examId": "819564039",
+      "studentId": "1765635716081",
+      "status": "assigned"
+    },
+    {
+      "id": "mjd9nfxh60d39uj6s4e",
+      "examId": "819564039",
+      "studentId": "1765635716081",
+      "status": "assigned"
+    },
+    {
+      "id": "mjd9nfxizl1l9k3qw8p",
+      "examId": "819564039",
+      "studentId": "1765635716081",
+      "status": "assigned"
+    },
+    {
+      "id": "mjd9nfxjdxd1sox0s3g",
+      "examId": "819564039",
+      "studentId": "1765635716081",
+      "status": "assigned"
+    },
+    {
+      "id": "mjd9ri11fwdjbfsk0mn",
+      "examId": "819564039",
+      "studentId": "1765635716082",
+      "status": "assigned"
+    },
+    {
+      "id": "mjd9roi2ffcsthnjtg",
+      "examId": "819564039",
+      "studentId": "1765635716083",
+      "status": "assigned"
+    },
+    {
+      "id": "mjd9sacwvybz2vzupx",
+      "examId": "819564039",
+      "studentId": "1765820810679",
+      "status": "assigned"
+    },
+    {
+      "id": "mjd9zk6us3lijaf6p9c",
+      "examId": "819564039",
+      "studentId": "1765635716084",
       "status": "assigned"
     }
   ],

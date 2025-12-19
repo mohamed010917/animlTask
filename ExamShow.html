@@ -5,17 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Exam Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="module" src="ExamShow.js"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class'
-    }
-  </script>
+  <script type="module" src="js/imgApi.js"></script>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/ExamShow.js"></script>
+ 
 </head>
+
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen">
-
-<!-- Navbar -->
-
+  <div id="Errors" class="bg-red-500 z-40 fixed top-6 right-6 pt-4 pr-12 pl-12 pb-4 text-bold text-2xl hidden"></div>
         <nav class="bg-white dark:bg-gray-800 shadow mb-10">
             <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
     
@@ -39,165 +36,356 @@
             </div>
         </nav>
     
+
 <!-- Page -->
 <div class="max-w-6xl mx-auto p-6">
 
-  <!-- Exam Info -->
-  <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6 mb-6">
-    <div class="flex justify-between items-center">
-      <div>
-        <h2 id="TitleExam" class="text-3xl font-bold"></h2>
-        <p id="DurationExam" class="text-gray-500 dark:text-gray-400"></p>
-      </div>
-      <button onclick="startEditExam(),openModal('editExamModal')" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Edit Exam</button>
+<!-- Exam Info -->
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6 mb-6">
+  <div class="flex justify-between items-center">
+    <div>
+      <h2 id="TitleExam" class="text-3xl font-bold"></h2>
+      <p id="DurationExam" class="text-gray-500 dark:text-gray-400"></p>
     </div>
-  </div>
-
-  <!-- Questions -->
-  <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6 mb-6">
-    
-    <div class="flex justify-between items-center mb-4">
-      <h3 class="text-2xl font-semibold">Questions</h3>
-      <button onclick="openModal('addQuestionModal')" class="bg-green-600 text-white px-4 py-2 rounded-lg">+ Add Question</button>
-      
-    </div>
-<div id="ParentContainer" class="border dark:border-gray-700 rounded-lg p-4 mb-4"> </div>
-    <!-- Question -->
-    <!-- <div class="border dark:border-gray-700 rounded-lg p-4 mb-4"> -->
-      
-    </div>
-  </div>
-
-  <!-- Students -->
-  <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6">
-    <div class="flex justify-between items-center mb-4">
-      <h3 class="text-2xl font-semibold">Students</h3>
-      <button id="buttonAddStudentIntoExam" onclick=" openModal('addStudentModal')" class="bg-green-600 text-white px-4 py-2 rounded-lg">+ Add Student</button>
-    </div>
-
-    <ul id="studentList" class="divide-y dark:divide-gray-700">
-
-    </ul>
+    <button id="edit_exam_id" 
+      class="bg-blue-600 text-white px-4 py-2 rounded-lg">
+      Edit Exam
+    </button>
   </div>
 </div>
 
-<!-- Modals -->
-<div id="editExamModal" class="modal hidden fixed inset-0 bg-black/50 flex items-center justify-center">
+<!-- Questions -->
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6 mb-6">
+  <div class="flex justify-between items-center mb-4">
+    <h3 class="text-2xl font-semibold">Questions</h3>
+    <button id="addQuestion" 
+      class="bg-green-600 text-white px-4 py-2 rounded-lg">
+      + Add Question
+    </button>
+  </div>
+
+  <div id="ParentContainer"
+    class="border border-gray-300 dark:border-gray-700 rounded-lg p-4 mb-4">
+  </div>
+</div>
+
+<!-- Students -->
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6">
+  <div class="flex justify-between items-center mb-4">
+    <h3 class="text-2xl font-semibold">Students</h3>
+    <button id="buttonAddStudentIntoExam"
+      
+      class="bg-green-600 text-white px-4 py-2 rounded-lg">
+      + Add Student
+    </button>
+  </div>
+
+<div id="Allstudents" class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+
+
+
+</div>
+
+
+</div>
+
+</div>
+
+<!-- ================= MODALS ================= -->
+
+<!-- Edit Exam -->
+<div id="editExamModal"
+  class="modal hidden fixed inset-0 bg-black/50 flex items-center justify-center">
   <div class="bg-white dark:bg-gray-800 p-6 rounded-lg w-96">
+
     <h3 class="text-xl font-bold mb-4">Edit Exam</h3>
+
     <input type="hidden" id="edit_exam_id">
-    <input id="Edit_Exam_Name" class="w-full mb-3 p-2 rounded bg-gray-100 dark:bg-gray-700" placeholder="Exam Name" />
-    <input id="Edit_Exam_Duration" class="w-full mb-3 p-2 rounded bg-gray-100 dark:bg-gray-700" placeholder="Duration" />
+
+    <input id="Edit_Exam_Name"
+      class="w-full mb-3 p-2 rounded
+      bg-gray-100 dark:bg-gray-700
+      text-gray-800 dark:text-gray-100
+      border border-gray-300 dark:border-gray-600"
+      placeholder="Exam Name" />
+
+    <input id="Edit_Exam_Duration"
+      class="w-full mb-3 p-2 rounded
+      bg-gray-100 dark:bg-gray-700
+      text-gray-800 dark:text-gray-100
+      border border-gray-300 dark:border-gray-600"
+      placeholder="Duration" />
+
     <div class="flex justify-end gap-2">
-      <button onclick="closeModal('editExamModal')">Cancel</button>
-      <button onclick="saveExamChanges()" class="bg-blue-600 text-white px-4 py-1 rounded">Save</button>
+      <button id="CloseeditExamModal" 
+        class="text-gray-700 dark:text-gray-300">
+        Cancel
+      </button>
+      <button id="saveExamChanges" 
+        class="bg-blue-600 text-white px-4 py-1 rounded">
+        Save
+      </button>
     </div>
   </div>
 </div>
 
-<div id="editQuestionModal" class="modal hidden fixed inset-0 bg-black/50 flex items-center justify-center">
+<!-- Edit Question -->
+<div id="editQuestionModal"
+  class="modal hidden fixed inset-0 bg-black/50 flex items-center justify-center">
   <div class="bg-white dark:bg-gray-800 p-6 rounded-lg w-96">
+
     <h3 class="text-xl font-bold mb-4">Edit Question</h3>
-    <input type="hidden" id="EditId">
-    <textarea id="QuestionText" class="w-full mb-3 p-2 rounded bg-gray-100 dark:bg-gray-700" placeholder="Question text"></textarea>
-    <input id="editA" class="w-full mb-2 p-2 rounded bg-gray-100 dark:bg-gray-700" placeholder="Choice A" />
-    <input id="editB" class="w-full mb-2 p-2 rounded bg-gray-100 dark:bg-gray-700" placeholder="Choice B" />
-    <input id="editC" class="w-full mb-2 p-2 rounded bg-gray-100 dark:bg-gray-700" placeholder="Choice C" />
-    <input id="editD" class="w-full mb-3 p-2 rounded bg-gray-100 dark:bg-gray-700" placeholder="Choice D" />
-    <input id="editCorrectAnswer" class="w-full mb-3 p-2 rounded bg-gray-100 dark:bg-gray-700" placeholder="Correct Answer (a, b, c, or d)" />
+
+    <form >
+      <div class="error questionError hidden rounded-xl text-red-700 dark:text-red-400"></div>
+      <div class="hidden" id="IdExam"></div>
+      <input type="hidden" id="EditId" name="id" >
+      <div class="input-group mb-4">
+        <label class="block text-sm text-gray-700 dark:text-gray-300">Question Text</label>
+        <textarea id="EditQuestionText"
+          class="mt-1 block w-full p-3 rounded-md
+          border border-gray-300 dark:border-gray-600
+          bg-white dark:bg-gray-700
+          text-gray-800 dark:text-gray-100"></textarea>
+      </div>
+
+      <div class="input-group mb-6">
+        <label class="block text-sm text-gray-700 dark:text-gray-300">Image</label>
+        <div class="flex items-center mt-1 rounded-md
+          border border-gray-300 dark:border-gray-600 overflow-hidden">
+
+          <input type="file" id="questionimageEdit" class="hidden">
+
+          <label for="questionimageEdit"
+            class="bg-gray-200 dark:bg-gray-600
+            text-gray-700 dark:text-gray-100
+            py-2 px-4 cursor-pointer
+            hover:bg-gray-300 dark:hover:bg-gray-500
+            border-l border-gray-300 dark:border-gray-600">
+            Choose File
+          </label>
+
+          <span id="img"
+            class="text-sm text-gray-500 dark:text-gray-400 p-2 truncate">
+            No file chosen
+          </span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div>
+          <label class="block text-sm text-gray-700 dark:text-gray-300">Choice 1</label>
+          <input id="editA" class="mt-1 block w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100">
+        </div>
+        <div>
+          <label class="block text-sm text-gray-700 dark:text-gray-300">Choice 2</label>
+          <input id="editB" class="mt-1 block w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100">
+        </div>
+        <div>
+          <label class="block text-sm text-gray-700 dark:text-gray-300">Choice 3</label>
+          <input id="editC" class="mt-1 block w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100">
+        </div>
+        <div>
+          <label class="block text-sm text-gray-700 dark:text-gray-300">Choice 4</label>
+          <input id="editD" class="mt-1 block w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100">
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-6 mb-6">
+        <div class="flex-1">
+          <label class="block text-sm text-gray-700 dark:text-gray-300">Correct Answer</label>
+          <select id="editCorrectAnswer"
+            class="mt-1 block w-full p-2 rounded-md
+            border border-gray-300 dark:border-gray-600
+            bg-white dark:bg-gray-700
+            text-gray-800 dark:text-gray-100">
+            <option value="a">Choice 1</option>
+            <option value="b">Choice 2</option>
+            <option value="c">Choice 3</option>
+            <option value="d">Choice 4</option>
+          </select>
+        </div>
+
+        <div class="flex-1">
+          <label class="block text-sm text-gray-700 dark:text-gray-300">Score</label>
+          <input id="scoreُEditQuestion"
+            class="mt-1 block w-full p-2 rounded-md
+            border border-gray-300 dark:border-gray-600
+            bg-white dark:bg-gray-700
+            text-gray-800 dark:text-gray-100">
+        </div>
+
+        <div class="flex-1">
+          <label class="block text-sm text-gray-700 dark:text-gray-300">Level</label>
+          <select id="difficultyEdit"
+            class="mt-1 block w-full p-2 rounded-md
+            border border-gray-300 dark:border-gray-600
+            bg-green-50 dark:bg-green-900
+            text-green-700 dark:text-green-300 font-bold text-center">
+            <option disabled selected>Select Level</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+      </div>
+     
+    </form>
+
     <div class="flex justify-end gap-2">
-      <button onclick="closeModal('editQuestionModal')">Cancel</button>
-      <button class="bg-blue-600 text-white px-4 py-1 rounded">Save</button>
+      <button id="closeModalEditqustion"  type="button" 
+        class="text-gray-700 dark:text-gray-300">
+        Cancel
+      </button>
+      <button id="SaveEditQustion" class="bg-blue-600 text-white px-4 py-1 rounded" type="button" >
+        Save
+      </button>
     </div>
   </div>
 </div>
 
-
-<div id="addQuestionModal" class="modal hidden fixed inset-0 bg-black/50 flex items-center justify-center">
+<!-- Add Question -->
+<div id="addQuestionModal"
+  class="modal hidden fixed inset-0 bg-black/50 flex items-center justify-center">
   <div class="bg-white dark:bg-gray-800 p-6 rounded-lg w-96">
+
     <h3 class="text-xl font-bold mb-4">Add Question</h3>
-    <form>
-    <div class="error questionError hidden rounded-xl text-red-700"></div>
-                        <div class="hidden" id="IdExam"></div>
-                        <div class="input-group mb-4">
-                            <label for="question-text" class="block text-sm text-gray-700">Question Text</label>
-                            <textarea id="questiontext" name="questionText" rows="3" class="mt-1 block w-full p-3 border border-gray-300 rounded-md resize-y focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" novalidate></textarea>
-                        </div>
 
-                        <div class="input-group mb-6">
-                            <label for="question-image" class="block text-sm text-gray-700">Image</label>
-                            <div class="flex items-center mt-1 border border-gray-300 rounded-md overflow-hidden">
-                                <input type="file" id="questionimage" name="questionImage" class="hidden">
-                                <label for="question-image" class="bg-gray-200 text-gray-700 py-2 px-4 cursor-pointer hover:bg-gray-300 transition duration-150 border-l border-gray-300">
-                                    Choose File
-                                </label>
-                                <span class="text-sm text-gray-500 p-2 truncate" id="file-name">No file chosen</span>
-                            </div>
-                        </div>
+    <form >
+      <div class="error questionError hidden rounded-xl text-red-700 dark:text-red-400"></div>
+      <div class="hidden" id="IdExam"></div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                            <div class="input-group">
-                                <label for="choice-a" class="block text-sm text-gray-700">Choice 1</label>
-                                <input type="text" id="choiceA" name="choiceA" novalidate class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
-                            </div>
-                            <div class="input-group">
-                                <label for="choice-b" class="block text-sm text-gray-700">Choice 2</label>
-                                <input type="text" id="choiceB" name="choiceB" novalidate class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
-                            </div>
-                            <div class="input-group">
-                                <label for="choice-c" class="block text-sm text-gray-700">Choice 3</label>
-                                <input type="text" id="choiceC" name="choiceC" novalidate class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
-                            </div>
-                            <div class="input-group">
-                                <label for="choice-d" class="block text-sm text-gray-700">Choice 4</label>
-                                <input type="text" id="choiceD" name="choiceD" novalidate class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
-                            </div>
-                        </div>
+      <div class="input-group mb-4">
+        <label class="block text-sm text-gray-700 dark:text-gray-300">Question Text</label>
+        <textarea id="questiontext"
+          class="mt-1 block w-full p-3 rounded-md
+          border border-gray-300 dark:border-gray-600
+          bg-white dark:bg-gray-700
+          text-gray-800 dark:text-gray-100"></textarea>
+      </div>
 
-                        <div class="flex flex-col md:flex-row gap-6 mb-6">
-                            <div class="input-group flex-1">
-                                <label for="correct-answer" class="block text-sm text-gray-700">Correct Answer</label>
-                                <select id="correctAnswer" name="correctAnswer" class="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-white" novalidate>
-                                    <option value="a">Choice 1</option>
-                                    <option value="b">Choice 2</option>
-                                    <option value="c">Choice 3</option>
-                                    <option value="d">Choice 4</option>
-                                </select>
-                            </div>
-                            <div class="input-group flex-1">
-                                <label for="score" class="block text-sm text-gray-700">Score</label>
-                                <input type="number" id="scoreNewQuestion" name="score" placeholder="5" min="1" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" novalidate>
-                            </div>
-                            <div class="input-group flex-1">
-                                <label for="difficulty" class="block text-sm text-gray-700">Level</label>
-                                <select name="difficulty" id="difficulty" class="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-green-50 text-green-700 font-bold text-center" novalidate>
-                                    <option value="" disabled selected>Select Level</option>
-                                    <option value="easy">Easy</option>
-                                    <option value="medium">Medium</option>
-                                    <option value="hard">Hard</option>
-                                </select>
-                            </div>
-                        </div>
-    <button onclick="AddNewQuestion()" class="bg-green-600 text-white px-4 py-1 rounded w-100">Add</button>
-    <button onclick="closeModal('addQuestionModal')" class="bg-green-600 text-white px-4 py-1 rounded w-100">Cancel</button>
+      <div class="input-group mb-6">
+        <label class="block text-sm text-gray-700 dark:text-gray-300">Image</label>
+        <div class="flex items-center mt-1 rounded-md
+          border border-gray-300 dark:border-gray-600 overflow-hidden">
+
+          <input type="file" id="questionimage" class="hidden">
+
+          <label for="questionimage"
+            class="bg-gray-200 dark:bg-gray-600
+            text-gray-700 dark:text-gray-100
+            py-2 px-4 cursor-pointer
+            hover:bg-gray-300 dark:hover:bg-gray-500
+            border-l border-gray-300 dark:border-gray-600">
+            Choose File
+          </label>
+
+          <span id="file-name"
+            class="text-sm text-gray-500 dark:text-gray-400 p-2 truncate">
+            No file chosen
+          </span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div>
+          <label class="block text-sm text-gray-700 dark:text-gray-300">Choice 1</label>
+          <input id="choiceA" class="mt-1 block w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100">
+        </div>
+        <div>
+          <label class="block text-sm text-gray-700 dark:text-gray-300">Choice 2</label>
+          <input id="choiceB" class="mt-1 block w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100">
+        </div>
+        <div>
+          <label class="block text-sm text-gray-700 dark:text-gray-300">Choice 3</label>
+          <input id="choiceC" class="mt-1 block w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100">
+        </div>
+        <div>
+          <label class="block text-sm text-gray-700 dark:text-gray-300">Choice 4</label>
+          <input id="choiceD" class="mt-1 block w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100">
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-6 mb-6">
+        <div class="flex-1">
+          <label class="block text-sm text-gray-700 dark:text-gray-300">Correct Answer</label>
+          <select id="correctAnswer"
+            class="mt-1 block w-full p-2 rounded-md
+            border border-gray-300 dark:border-gray-600
+            bg-white dark:bg-gray-700
+            text-gray-800 dark:text-gray-100">
+            <option value="a">Choice 1</option>
+            <option value="b">Choice 2</option>
+            <option value="c">Choice 3</option>
+            <option value="d">Choice 4</option>
+          </select>
+        </div>
+
+        <div class="flex-1">
+          <label class="block text-sm text-gray-700 dark:text-gray-300">Score</label>
+          <input id="scoreNewQuestion"
+            class="mt-1 block w-full p-2 rounded-md
+            border border-gray-300 dark:border-gray-600
+            bg-white dark:bg-gray-700
+            text-gray-800 dark:text-gray-100">
+        </div>
+
+        <div class="flex-1">
+          <label class="block text-sm text-gray-700 dark:text-gray-300">Level</label>
+          <select id="difficulty"
+            class="mt-1 block w-full p-2 rounded-md
+            border border-gray-300 dark:border-gray-600
+            bg-green-50 dark:bg-green-900
+            text-green-700 dark:text-green-300 font-bold text-center">
+            <option disabled selected>Select Level</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="AddNewQuestion"  type="button"
+        class="bg-green-600 text-white px-4 py-1 rounded w-full mb-2">
+        Add
+      </button>
+
+      <button id="ClosequstionModel"
+        class="bg-green-600 text-white px-4 py-1 rounded w-full">
+        Cancel
+      </button>
     </form>
   </div>
 </div>
 
 
 <div id="addStudentModal" class="modal hidden fixed inset-0 bg-black/50 flex items-center justify-center">
-  <div class="bg-white dark:bg-gray-800 p-6 rounded-lg w-96">
-    <h3 class="text-xl font-bold mb-4">Add Student</h3>
-    <input id="newIdStudentIntoExam" class="w-full mb-3 p-2 rounded bg-gray-100 dark:bg-gray-700" placeholder="Student ID" />
-    <button onclick="addStudentIntoExam(),closeModal('addStudentModal')" class="bg-green-600 text-white px-4 py-1 rounded w-full">Add</button>
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-lg w-96 max-h-[80vh] overflow-y-auto">
+    <h3 class="text-xl font-bold mb-4">Select Students</h3>
+
+    <!-- List of students -->
+    <div id="studentsList" class="space-y-2">
+   
+    </div>
+
+    <button type="button" class="bg-green-600 text-white px-4 py-2 rounded w-full mt-4" id="addSelectedStudentsBtn">
+      Add Selected
+    </button>
   </div>
 </div>
 
-<script>
-function openModal(id){ document.getElementById(id).classList.remove('hidden') }
-function closeModal(id){ document.getElementById(id).classList.add('hidden') }
-function toggleDark(){ document.documentElement.classList.toggle('dark') }
-</script>
+
 
 </body>
 </html>
+
+
+
+
+
+
+
+        
+  
+
+ 
