@@ -121,7 +121,6 @@
       "teacherId": "1"
     },
     {
-
       "id": "993886402",
       "name": "Virginia Kim",
       "duration": 54,
@@ -174,11 +173,16 @@
       "name": "Azalia Elliott",
       "duration": 18,
       "teacherId": "1"
+    },
+    {
+      "id": "148024722",
+      "name": "animal test",
+      "duration": 20,
+      "teacherId": "1"
     }
   ],
   "questions": [
     {
-
       "id": "52c6",
       "text": "Sit nulla sit eius q",
       "choices": {
@@ -267,6 +271,21 @@
       "imgUrl": "https://i.ibb.co/sdBPp38z/Screenshot-from-2025-11-25-15-27-12.png",
       "difficulty": "medium",
       "examId": 819564039
+    },
+    {
+      "id": "9de1",
+      "text": "rytufygigiytrzedruijnohgcfxdgvbjhnhgxdfzsxcgbjhn",
+      "choices": {
+        "a": "qyscqtwcqw",
+        "b": "qdfuqfdq",
+        "c": "qduwedyqed",
+        "d": "qeudeudwede"
+      },
+      "correctAnswer": "a",
+      "score": 10,
+      "imgUrl": "https://i.ibb.co/1GxfSqVJ/2-2.webp",
+      "difficulty": "easy",
+      "examId": 148024722
     }
   ],
   "exam_students": [
@@ -349,7 +368,6 @@
       "status": "assigned"
     },
     {
-
       "id": "796391",
       "examId": 993886402,
       "studentId": "1765821131384",
@@ -533,6 +551,12 @@
       "id": "209860",
       "examId": 819564039,
       "studentId": "1765821131384",
+      "status": "assigned"
+    },
+    {
+      "id": "328363",
+      "examId": 148024722,
+      "studentId": "1765635716081",
       "status": "assigned"
     }
   ],

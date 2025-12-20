@@ -59,7 +59,7 @@ const  NextQuizze =async function(){
         quizDiv.className = "p-4 border border-gray-300 dark:border-gray-700 rounded-lg flex justify-between items-center mb-4";
         quizDiv.innerHTML = `
             <span class="font-medium">${quiz.name}</span>
-            <a href="exam.html?id=${quiz.id}"   class="px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Start</a>
+            <a href="exam.html?id=${quiz.id}&studentId=${studentData.id}"   class="px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Start</a>
         `;
         nextExam.appendChild(quizDiv);
     });
