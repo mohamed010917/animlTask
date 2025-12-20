@@ -151,10 +151,11 @@ ButtonSubmit.addEventListener('click', submitData);
 async function submitData() {
     const now = new Date();
     try {
-          await fetch(`http://localhost:3000/exam_students/${examStudent}`, {
+          let res = await fetch(`http://localhost:3000/exam_students/${examStudent}`, {
                 method: 'DELETE'
             });
-        await fetch('http://localhost:3000/results', {
+            res = await res.json() ;
+        let response = await fetch('http://localhost:3000/results', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({
@@ -165,6 +166,7 @@ async function submitData() {
                 finishedAt: now.toISOString()
             })
         });
+        response = await response.json();
        
 
         window.location.href = "studentProfile.html";

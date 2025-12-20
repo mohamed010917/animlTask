@@ -143,7 +143,8 @@ async function AddStudentsFinsh() {
     const response = await fetch('http://localhost:3000/results');
     if (!response.ok) return;
     let data = await response.json();
-    if(data){
+    console.log(data) ;
+    if(data.length){
         editExamBtn.remove() ;
         addQuestionBtn.remove() ;
         FinshStudents = true ;

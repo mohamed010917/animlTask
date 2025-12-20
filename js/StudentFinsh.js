@@ -25,9 +25,9 @@ const fetchExamData = async (examId) => {
 const fetchQuizData = async () => {
     const res = await fetch("http://localhost:3000/results/" + ResultId);
     const quizData = await res.json();
-     let  std = await fetch("http://localhost:3000/students/" + quizData.studentId);
+     let  std = await fetch("http://localhost:3000/students" );
     std = await std.json();
-    student = std ;
+    student = std.find(s => s.id == quizData.studentId) ;
     return quizData;
 }
 
