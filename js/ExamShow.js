@@ -2,7 +2,7 @@ import ImgUplode from "./imgApi.js";
 import { allStudents } from "./main.js";
 const Errors = document.getElementById("Errors");
 const UrlPage = new URLSearchParams(window.location.search);
-
+let FinshStudents = false ;
 // DOM Elements
 const editExamBtn = document.getElementById("edit_exam_id");
 const addQuestionBtn = document.getElementById("addQuestion");
@@ -143,7 +143,11 @@ async function AddStudentsFinsh() {
     const response = await fetch('http://localhost:3000/results');
     if (!response.ok) return;
     let data = await response.json();
-    console.log(data )
+    if(data){
+        editExamBtn.remove() ;
+        addQuestionBtn.remove() ;
+        FinshStudents = true ;
+    }
     data = data.filter(s => s.examId == idExam);
     const allstud = await allStudents();
     let students = allstud.filter(student => data.find(s => s.studentId == student.id));
@@ -198,7 +202,12 @@ async function AddStudentsFinsh() {
 
                                 
                                 </div>
-
+                                  <a  href="showFinshExam.html?id=${result.id}"
+                                        class="DelStudent text-red-500 dark:text-blue-400
+                                            hover:bg-blue-500 dark:hover:bg-blue-900/30
+                                            p-2 rounded-full transition">
+                                        show
+                                    </a>
                                 <!-- معلومات إضافية -->
                                 <div class="mt-4 space-y-2 text-sm">
 
@@ -278,8 +287,12 @@ async function loadQuestions() {
                         <p class="text-sm mt-2">Score: ${q.score}</p>
                     </div>
                     <div class="flex flex-col justify-center gap-2 ml-3">
-                        <button onclick="prepareEditId('${q.id}')" class="text-blue-500 hover:text-blue-700">Edit</button>
-                        <button onclick="deleteQuestionId('${q.id}')" class="text-red-500 hover:text-red-700">Delete</button>
+                        ${
+                            FinshStudents ? ""
+                            :
+                           ` <button onclick="prepareEditId('${q.id}')" class="text-blue-500 hover:text-blue-700">Edit</button>
+                            <button onclick="deleteQuestionId('${q.id}')" class="text-red-500 hover:text-red-700">Delete</button>`
+                        }
                     </div>
                 </div>
             `;

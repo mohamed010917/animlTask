@@ -816,12 +816,6 @@
       "status": "assigned"
     },
     {
-      "id": "mjdcg0pzbfu18pzy97p",
-      "examId": "mjdcei0d9bokb4wo9ms",
-      "studentId": "1765635716081",
-      "status": "assigned"
-    },
-    {
       "id": "mjdcg0qav0crtrrx03k",
       "examId": "mjdcei0d9bokb4wo9ms",
       "studentId": "1765635716083",
@@ -858,8 +852,8 @@
       "studentId": "1765635716081",
       "score": 16,
       "answers": {
-        "q1": "b",
-        "q2": "c"
+        "mjdcrrobc6o464kjwyk": "b",
+        "mjdcrrnva37ga4q9v7r": "c"
       },
       "finishedAt": "2025-12-15T12:30:00",
       "id": "522c"
