@@ -51,38 +51,48 @@ const displayExamResult = async () => {
     examName.textContent = examData.name;
     teacherName.textContent = examData.teacher;
     examDate.textContent = new Date(quizData.finishedAt).toLocaleDateString();
-    Object.entries(quizData.answers).forEach(([questionId, selectedAnswer]) => {
-        
-        const question = questionsData.find(q => {console.log(q) ; return q.id == questionId}) ;
-        console.log(question , questionId)
-        if(question){
+    Object.entries(quizData.answers).forEach(([questionId, selectedAnswer], index) => {
 
-            const isCorrect = question.correctAnswer === selectedAnswer;
-            const questionDiv = document.createElement("div");
-            questionDiv.className = "bg-white dark:bg-gray-800 rounded-xl shadow p-6";
-            questionDiv.innerHTML = `
-                <h3 class="font-bold text-lg mb-4">
-                    Q${questionId}: ${question.title}
-                </h3>
-                ${
-                    question.imageUrl ? " <img src='${question.imageUrl }' alt='Question Image' class='mb-4 max-h-64 object-contain'></img>": ''
-                }
-                
-                <ul class="space-y-3">
-                    ${Object.entries(question.choices).map(([answer,val]) => `
-                        <li class="border rounded-lg px-4 py-2 
-                            ${answer === question.correctAnswer ? 'border-blue-500 bg-blue-100 dark:bg-blue-900' : ''}
-                            ${answer === selectedAnswer && !isCorrect ? 'border-red-500 bg-red-100 dark:bg-red-900' : ''}">    
-                            ${answer === question.correctAnswer ? '✅' : ''}
-                            ${answer === selectedAnswer && !isCorrect ? '❌' : ''}
-                            ${answer}
-                        </li>
-                    `).join('')}
-                </ul>
-            `;
-            QuestionDiv.appendChild(questionDiv);
-        }
+        const question = questionsData.find(q => q.id == questionId);
+
+        if (!question) return;
+
+        const isCorrect = question.correctAnswer === selectedAnswer;
+
+        const questionDiv = document.createElement("div");
+        questionDiv.className = "bg-white dark:bg-gray-800 rounded-xl shadow p-6 mb-6";
+
+        questionDiv.innerHTML = `
+            <h3 class="font-bold text-lg mb-4">
+                Q${index + 1}: ${question.title}
+            </h3>
+
+            ${
+                question.imageUrl
+                    ? `<img src="${question.imageUrl}" 
+                            alt="Question Image"
+                            class="mb-4 max-h-64 object-contain rounded-lg">`
+                    : ''
+            }
+
+            <ul class="space-y-3">
+                ${Object.keys(question.choices).map(answer => `
+                    <li class="border rounded-lg px-4 py-2
+                        ${answer === question.correctAnswer ? 'border-blue-500 bg-blue-100 dark:bg-blue-900' : ''}
+                        ${answer === selectedAnswer && !isCorrect ? 'border-red-500 bg-red-100 dark:bg-red-900' : ''}">
+                        
+                        ${answer === question.correctAnswer ? '✅ ' : ''}
+                        ${answer === selectedAnswer && !isCorrect ? '❌ ' : ''}
+                        
+                        ${answer}
+                    </li>
+                `).join('')}
+            </ul>
+        `;
+
+        QuestionDiv.appendChild(questionDiv);
     });
+
 }
 
 displayExamResult() ;
