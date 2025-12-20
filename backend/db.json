@@ -192,7 +192,6 @@
   ],
   "questions": [
     {
-
       "id": "d82c",
       "text": "Repudiandae asperior",
       "choices": {
@@ -268,7 +267,6 @@
       "examId": 819564039
     },
     {
-
       "id": "1be3",
       "examId": "mjct6v07qgxtobqrz6n",
       "text": " ahmed mohamed",
@@ -429,7 +427,6 @@
       "imgUrl": "https://i.ibb.co/qvrZ6dv/Screenshot-from-2025-12-19-17-42-37.png",
       "difficulty": "hard",
       "examId": "mjdcei0d9bokb4wo9ms"
-
     }
   ],
   "exam_students": [
@@ -686,7 +683,6 @@
       "status": "assigned"
     },
     {
-
       "id": "1765635716081",
       "name": "Mohamed",
       "password": "MTIzNDU2Nzg5",
@@ -712,18 +708,6 @@
       "imgurl": "https://i.ibb.co/Zzk4BZF0/Screenshot-from-2025-11-19-13-22-10.png",
       "grade": "1",
       "role": "student"
-    },
-    {
-      "id": "mjd9mpa4h88vrwlpv5t",
-      "examId": "819564039",
-      "studentId": "1765635716081",
-      "status": "assigned"
-    },
-    {
-      "id": "mjd9mpa50onziz1urgkg",
-      "examId": "819564039",
-      "studentId": "1765635716081",
-      "status": "assigned"
     },
     {
       "id": "mjd9mpa6bwcm5ydnosh",
@@ -798,12 +782,6 @@
       "status": "assigned"
     },
     {
-      "id": "mjdbx5xd5vkyx5hkkas",
-      "examId": "843187788",
-      "studentId": "1765635716081",
-      "status": "assigned"
-    },
-    {
       "id": "mjdbx5xosy6xjwk2cic",
       "examId": "843187788",
       "studentId": "1765635716082",
@@ -852,12 +830,108 @@
       "studentId": "1765635716081",
       "score": 16,
       "answers": {
-          "mjdcf456a3mm27myt9": "b",
-          "mjdcfffqj1vvn5epvbl": "c"
-        },
-
+        "mjdcf456a3mm27myt9": "b",
+        "mjdcfffqj1vvn5epvbl": "c"
+      },
       "finishedAt": "2025-12-15T12:30:00",
       "id": "522c"
+    },
+    {
+      "id": "d32f",
+      "examId": "767370850",
+      "studentId": "1765635716081",
+      "score": 0,
+      "answers": [
+        "c",
+        "d",
+        "b",
+        "b",
+        "b",
+        "c"
+      ],
+      "finishedAt": "2025-12-20T20:35:12.754Z"
+    },
+    {
+      "id": "ef9e",
+      "examId": "819564039",
+      "studentId": "1765635716081",
+      "score": 0,
+      "answers": {
+        "43a2": "b",
+        "d8cb": "a",
+        "c2ec": "d"
+      },
+      "finishedAt": "2025-12-20T20:54:25.288Z"
+    },
+    {
+      "id": "6b11",
+      "studentId": "1765635716081",
+      "score": 7,
+      "answers": {
+        "d8cb": "c",
+        "43a2": "b",
+        "c2ec": "d"
+      },
+      "finishedAt": "2025-12-20T20:56:21.892Z"
+    },
+    {
+      "id": "8729",
+      "studentId": "1765635716081",
+      "score": 10,
+      "examId": "819564039",
+      "answers": {
+        "d8cb": "c",
+        "43a2": "b",
+        "c2ec": "b"
+      },
+      "finishedAt": "2025-12-20T21:00:34.861Z"
+    },
+    {
+      "id": "338d",
+      "studentId": "1765635716081",
+      "score": 3,
+      "examId": "819564039",
+      "answers": {
+        "c2ec": "b",
+        "43a2": "a",
+        "d8cb": "d"
+      },
+      "finishedAt": "2025-12-20T21:08:08.421Z"
+    },
+    {
+      "id": "b6f3",
+      "studentId": "1765635716081",
+      "score": 10,
+      "examId": "819564039",
+      "answers": {
+        "d8cb": "c",
+        "43a2": "a",
+        "c2ec": "b"
+      },
+      "finishedAt": "2025-12-20T21:08:47.422Z"
+    },
+    {
+      "id": "d713",
+      "studentId": "1765635716081",
+      "score": 15,
+      "examId": "819564039",
+      "answers": {
+        "d8cb": "c",
+        "43a2": "d",
+        "c2ec": "c"
+      },
+      "finishedAt": "2025-12-20T21:10:15.667Z"
+    },
+    {
+      "id": "ef5b",
+      "studentId": "1765635716081",
+      "score": 0,
+      "examId": "843187788",
+      "answers": {
+        "57e6": "c",
+        "a47f": "c"
+      },
+      "finishedAt": "2025-12-20T21:13:32.917Z"
     }
   ]
 }

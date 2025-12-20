@@ -1,3 +1,8 @@
+if(localStorage.getItem("teacher") == 'null' || localStorage.getItem("teacher") === null ){
+    location.href = "index.html";
+}
+
+
 let imgStudent = document.querySelector("#student img");
 let nameStudent = document.querySelector("#student h2");
 let gradeStudent = document.querySelector("#student p#grade");

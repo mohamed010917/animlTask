@@ -69,4 +69,3 @@ if(Logout){
 
 
 export {allStudents , allTeachers , allExams};
-
