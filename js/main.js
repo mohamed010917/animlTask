@@ -5,14 +5,14 @@
 const allStudents = async function () {
     let res = await fetch("http://localhost:3000/students");
     let data = await res.json();
-    console.log(data);
+
     return data;
 }
 
 const allTeachers = async function () {
     let res = await fetch("http://localhost:3000/teachers");
     let data = await res.json();
-    console.log(data);
+ 
     return data;
 }
 
