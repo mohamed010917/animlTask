@@ -46,8 +46,8 @@ const displayExamResult = async () => {
     const examData = await fetchExamData(quizData.examId);
     const questionsData = await fetchQuestionsData(quizData.examId);
    
-    let total = questionsData.reduce((sum, question) => sum + question.score, 0);
-    
+    let total = questionsData.reduce((sum, question) =>  sum + +question.score   , 0);
+    console.log(total) ;
     imgStudent.src = student.imgurl;
     nameStudent.textContent = student.name;
     gradeStudent.textContent = `Grade: ${student.grade}`;

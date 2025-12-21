@@ -44,98 +44,100 @@ async function AddStudents() {
     let results = await fetch('http://localhost:3000/results');
     if (!results.ok) return;
     results = await results.json();
-    data = data.filter(s => s.examId == idExam);
-    const allstud = await allStudents();
-    let students = allstud.filter(student => data.find(s => s.studentId == student.id));
-     students = students.filter(student => !results.find(s => s.studentId == student.id));
-
-    students.forEach(s => {
-        Allstudents.innerHTML +=
-            `
-                <div class="bg-white dark:bg-gray-800 
-                            border border-gray-200 dark:border-gray-700
-                            rounded-xl shadow-md dark:shadow-black/40
-                            transition-all duration-200 hover:shadow-lg">
-                    
-                    <div class="p-4 md:p-6">
-                        <div class="flex flex-col sm:flex-row gap-4">
-
-                            
-                            <div class="relative self-center sm:self-start">
-                                <img src="${s.imgurl}"
-                                    class="w-16 h-16 sm:w-20 sm:h-20 rounded-full 
-                                            border-2 border-blue-300 dark:border-blue-700
-                                            object-cover">
-
-                                <div class="absolute bottom-0 right-0 
-                                            w-5 h-5 sm:w-6 sm:h-6 
-                                            bg-blue-500 dark:bg-blue-600
-                                            border-2 border-white dark:border-gray-800
-                                            rounded-full flex items-center justify-center">
-                                    <span class="text-xs text-white">✓</span>
-                                </div>
-                            </div>
-
-                           
-                            <div class="flex-1 w-full">
-
-                                <div class="flex justify-between items-start gap-3">
-
-                                    <div>
-                                        <h3 class="text-lg sm:text-xl font-bold
-                                                text-gray-800 dark:text-white">
-                                             ${s.name}
-                                        </h3>
-
-                                        <div class="flex gap-2 mt-1">
-                                            <span class="bg-blue-100 dark:bg-blue-900/40
-                                                        text-blue-800 dark:text-blue-300
-                                                        text-xs px-3 py-1 rounded-full">
-                                                 ${s.grade}
-                                            </span>
-
-                                        </div>
+    data = data.find(s => s.examId == idExam);
+    if(data){
+        const allstud = await allStudents();
+        let students = allstud.filter(student => data.studentId == student.id);
+         students = students.filter(student => !results.find(s => s.studentId == student.id && s.examId == idExam));
+    
+        students.forEach(s => {
+            Allstudents.innerHTML +=
+                `
+                    <div class="bg-white dark:bg-gray-800 
+                                border border-gray-200 dark:border-gray-700
+                                rounded-xl shadow-md dark:shadow-black/40
+                                transition-all duration-200 hover:shadow-lg">
+                        
+                        <div class="p-4 md:p-6">
+                            <div class="flex flex-col sm:flex-row gap-4">
+    
+                                
+                                <div class="relative self-center sm:self-start">
+                                    <img src="${s.imgurl}"
+                                        class="w-16 h-16 sm:w-20 sm:h-20 rounded-full 
+                                                border-2 border-blue-300 dark:border-blue-700
+                                                object-cover">
+    
+                                    <div class="absolute bottom-0 right-0 
+                                                w-5 h-5 sm:w-6 sm:h-6 
+                                                bg-blue-500 dark:bg-blue-600
+                                                border-2 border-white dark:border-gray-800
+                                                rounded-full flex items-center justify-center">
+                                        <span class="text-xs text-white">✓</span>
                                     </div>
-
-                                    <button  data-id="${s.id}"
-                                        class="DelStudent text-red-500 dark:text-red-400
-                                            hover:bg-red-50 dark:hover:bg-red-900/30
-                                            p-2 rounded-full transition">
-                                        🗑
-                                    </button>
                                 </div>
-
-                                <!-- معلومات إضافية -->
-                                <div class="mt-4 space-y-2 text-sm">
-
-                                    <p class="text-gray-600 dark:text-gray-300">
-                                        📞 ${s.mobile}
-                                    </p>
-
+    
+                               
+                                <div class="flex-1 w-full">
+    
+                                    <div class="flex justify-between items-start gap-3">
+    
+                                        <div>
+                                            <h3 class="text-lg sm:text-xl font-bold
+                                                    text-gray-800 dark:text-white">
+                                                 ${s.name}
+                                            </h3>
+    
+                                            <div class="flex gap-2 mt-1">
+                                                <span class="bg-blue-100 dark:bg-blue-900/40
+                                                            text-blue-800 dark:text-blue-300
+                                                            text-xs px-3 py-1 rounded-full">
+                                                     ${s.grade}
+                                                </span>
+    
+                                            </div>
+                                        </div>
+    
+                                        <button  data-id="${s.id}"
+                                            class="DelStudent text-red-500 dark:text-red-400
+                                                hover:bg-red-50 dark:hover:bg-red-900/30
+                                                p-2 rounded-full transition">
+                                            🗑
+                                        </button>
+                                    </div>
+    
+                                    <!-- معلومات إضافية -->
+                                    <div class="mt-4 space-y-2 text-sm">
+    
+                                        <p class="text-gray-600 dark:text-gray-300">
+                                            📞 ${s.mobile}
+                                        </p>
+    
+                                    </div>
+    
                                 </div>
-
                             </div>
                         </div>
                     </div>
-                </div>
-        `
-    });
-    let allDel = document.querySelectorAll(".DelStudent");
-    allDel.forEach(e => {
-        e.onclick = async () => {
-            console.log(data);
-            let id = data.find(s => e.dataset.id == s.studentId).id;
-            const response = await fetch(`http://localhost:3000/exam_students/${id}`,
-                { method: 'DELETE' });
-
-            if (response.ok) {
-                showSuccess("Student removed successfully");
-                loadStudents();
-            } else {
-                showError("Failed to remove student");
+            `
+        });
+        let allDel = document.querySelectorAll(".DelStudent");
+        allDel.forEach(e => {
+            e.onclick = async () => {
+                console.log(data);
+                let id = data.find(s => e.dataset.id == s.studentId).id;
+                const response = await fetch(`http://localhost:3000/exam_students/${id}`,
+                    { method: 'DELETE' });
+    
+                if (response.ok) {
+                    showSuccess("Student removed successfully");
+                    loadStudents();
+                } else {
+                    showError("Failed to remove student");
+                }
             }
-        }
-    })
+        })
+    }
 }
 
 
@@ -143,6 +145,7 @@ async function AddStudentsFinsh() {
     const response = await fetch('http://localhost:3000/results');
     if (!response.ok) return;
     let data = await response.json();
+    data = data.filter(d => d.examId == idExam) ;
     console.log(data) ;
     if(data.length){
         editExamBtn.remove() ;

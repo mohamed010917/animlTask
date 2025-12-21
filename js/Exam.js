@@ -4,8 +4,10 @@ class Exam{
         this.duration = duration;
         this.questions = [];
         this.students = [];
-        this.techer = techer;
-        this.id = Date.now().toString(36) + Math.random().toString(36).slice(2) ;
+        this.teacherId = JSON.parse( localStorage.getItem("teacher")).id;
+        this.id = Date.now().toString(36).slice(-4) +
+                Math.random().toString(36).slice(2, 4);
+
     }
 }
 
@@ -18,7 +20,8 @@ class Question{
         this.imgUrl = img ;
         this.difficulty = difficulty ;
         this.examId = examId ;
-        this.id = Date.now().toString(36) + Math.random().toString(36).slice(2) ;
+         this.id = Date.now().toString(36).slice(-4) +
+                Math.random().toString(36).slice(2, 4);
     }
 }
 

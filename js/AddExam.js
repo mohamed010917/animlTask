@@ -131,7 +131,7 @@ const createExam = function(){
 
     exam.name = examTitle;
     exam.duration = Number(examDuration);
-    exam.teacherId = JSON.parse( localStorage.getItem("teacher")).id;
+
     exam.questions = [];
     exam.data = new Date().toLocaleDateString();
     ExamNamePreviow.innerText = exam.name ;

@@ -163,7 +163,7 @@ async function submitData() {
                 score: score,
                 examId : idExam ,
                 answers: answers,
-                finishedAt: now.toISOString()
+                finishedAt: now.toISOString() ,
             })
         });
         response = await response.json();
