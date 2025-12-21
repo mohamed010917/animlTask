@@ -14,10 +14,10 @@ Teachers can create and manage exams, while students can register, take exams, a
 **Mohamed Ahmed Halawa**
 📧 [mohamed.ahemd.halawa.iti@gmail.com](mailto:mohamed.ahemd.halawa.iti@gmail.com)
 
-**mohamed tark**
+**mohamed tarek kandeil**
 
 
-📧 [mohamed.ahemd.halawa.iti@gmail.com](mailto:mohamed.ahemd.halawa.iti@gmail.com)
+📧 [mohammed.tarek.kandeil@gmail.com](mailto:mohammed.tarek.kandeil@gmail.com)
 
 ---
 
