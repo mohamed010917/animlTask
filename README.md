@@ -4,10 +4,6 @@
 
 ## JavaScript Exam Management System
 
-AnimalTask is a JavaScript-based exam management system that supports **students** and **teachers**.
-Teachers can create and manage exams, while students can register, take exams, and view results.
-
----
 
 ## 👨‍💻 Author
 

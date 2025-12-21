@@ -27,12 +27,6 @@
       "id": "x5r61c"
     },
     {
-      "id": "d7bvmw",
-      "name": "Allen Lancaster",
-      "duration": 46,
-      "teacherId": "1"
-    },
-    {
       "id": "goqdqi",
       "name": "Tashya Leon",
       "duration": 41,
@@ -97,7 +91,7 @@
       "score": 9,
       "imgUrl": "https://i.ibb.co/sv6mRBdy/Screenshot-from-2025-12-21-17-15-01.png",
       "difficulty": "hard",
-      "examId": "d7bvmw"
+      "examId": null
     },
     {
       "id": "dtwjqa",
@@ -112,7 +106,7 @@
       "score": 3,
       "imgUrl": "https://i.ibb.co/Dgbqhwhv/Screenshot-from-2025-12-21-17-14-43.png",
       "difficulty": "easy",
-      "examId": "d7bvmw"
+      "examId": null
     },
     {
       "id": "h2ljx4",
@@ -148,7 +142,7 @@
   "exam_students": [
     {
       "id": "mjfzdzuiwovle2v18w",
-      "examId": "d7bvmw",
+      "examId": null,
       "studentId": "023s85",
       "status": "assigned"
     }

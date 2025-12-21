@@ -26,10 +26,40 @@ const  NextQuizze =async function(){
         quizDiv.innerHTML = `
             <span class="font-medium">${quiz.name}</span>
             <a href="ExamShow.html?id=${quiz.id}"   class="px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Show</a>
+            <button data-id="${quiz.id}" class="delete bg-red-500 pt-2 pb-2 pr-6 pl-6 rounded">Delete</button>
         `;
         nextExam.appendChild(quizDiv);
     });
         
+    document.querySelectorAll(".delete").forEach(e =>{
+        e.onclick = async (event)=>{
+            let id = e.dataset.id ;
+            let exam = myExam.find(e => e.id == id) ;
+            let response = await fetch("http://localhost:3000/results") ;
+            response = await response.json() ;
+            response = response.find(e => e.examId == id) ;
+            if(!response){
+                let response = await fetch("http://localhost:3000/exams/" + id ,{method : "delete"}) ;
+                response = await response.json() ;
+                let allQuestion = await fetch("http://localhost:3000/questions" )
+                allQuestion = await allQuestion.json() ;
+                allQuestion.filter(e=> e.examId == id).array.forEach(async e => {
+                    let response = await fetch("http://localhost:3000/questions/" + e.id ,{method : "delete"}) ;
+                    response = await response.json() ;
+                });
+                let allstudent = await fetch("http://localhost:3000/exam_students" ) ;
+                allstudent = await allstudent.json() ;
+                allstudent.filter(e=> e.examId == id).array.forEach(async e => {
+                    let response = await fetch("http://localhost:3000/exam_students/" + e.id ,{method : "delete"}) ;
+                    response = await response.json() ;
+                });
+            }else{
+                let deleteExam = document.querySelector("#deleteExam") ;
+                deleteExam.classList.remove("hidden") ;
+                setTimeout(()=> deleteExam.classList.add("hidden"), 2000)
+            }
+        }
+    })
 }
 
 
