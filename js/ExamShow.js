@@ -289,6 +289,9 @@ async function loadQuestions() {
             const questionHtml = `
                 <div class="flex justify-between mb-3">
                     <div class="bg-gray p-4 rounded-xl w-full">
+                         ${
+                                q.imgUrl ? `<img src=${  q.imgUrl } alt=${q.text}>` : ""
+                            }
                         <h4 class="font-semibold">${index + 1}. ${q.text}</h4>
                         <ul class="mt-2 space-y-1">
                             <li class="${q.correctAnswer === 'a' ? 'text-green-600 font-bold' : ''}">A) ${q.choices.a}</li>
@@ -548,7 +551,12 @@ async function AddNewQuestion(e) {
         showError("Score must be a positive number");
         return;
     }
-
+    const img = document.getElementById('questionimage');
+    if (!img.files || img.files.length === 0) {
+        showError( "Image file is required");      
+        return ;
+    }
+    let imgUrl = await ImgUplode(img);
     const newQuestion = {
         examId: String(idExam),
         text: document.getElementById('questiontext').value,
@@ -560,7 +568,8 @@ async function AddNewQuestion(e) {
         },
         correctAnswer: document.getElementById('correctAnswer').value,
         score: document.getElementById('scoreNewQuestion').value,
-        difficulty: document.getElementById('difficulty').value
+        difficulty: document.getElementById('difficulty').value ,
+        imgUrl : imgUrl.display_url 
     };
 
     const response = await fetch('http://localhost:3000/questions', {

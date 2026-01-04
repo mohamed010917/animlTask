@@ -336,7 +336,9 @@ const AddQustionToPreviwe = function (question){
     QuestionDiv.setAttribute("id" , question.id + "qus") ;
     QuestionDiv.innerHTML = `
       <div class="flex items-start justify-between mb-3 text-black dark:text-white">
+      
             <div class="flex items-start space-x-3">
+          
                 <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-800 flex items-center justify-center">
                     <span class="text-indigo-600 dark:text-indigo-400 text-sm font-medium">${countq}</span>
                 </div>
