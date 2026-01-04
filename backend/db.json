@@ -10,6 +10,17 @@
       "exams": [],
       "resultExams": [],
       "role": "student"
+    },
+    {
+      "id": "3k4406",
+      "name": "Catherine Kinney",
+      "password": "Pa$$w0rd!",
+      "mobile": "01091786649",
+      "imgurl": "https://i.ibb.co/jPkqnbTp/Screenshot-from-2025-12-24-13-44-21.png",
+      "grade": "1",
+      "exams": [],
+      "resultExams": [],
+      "role": "student"
     }
   ],
   "teachers": [
@@ -30,6 +41,23 @@
       "id": "goqdqi",
       "name": "Tashya Leon",
       "duration": 41,
+      "teacherId": "1"
+    },
+    {
+      "name": "Kasimir Singleton",
+      "duration": "60",
+      "id": "yuwjp9"
+    },
+    {
+      "id": "l0yrnp",
+      "name": "mohamed halawa",
+      "duration": 18,
+      "teacherId": "1"
+    },
+    {
+      "id": "nm6tye",
+      "name": "Omar Rowland",
+      "duration": 60,
       "teacherId": "1"
     }
   ],
@@ -137,6 +165,155 @@
       "imgUrl": "https://i.ibb.co/Jjrb6Drw/Screenshot-from-2025-12-21-17-15-01.png",
       "difficulty": "medium",
       "examId": "goqdqi"
+    },
+    {
+      "id": "zvz9au",
+      "text": "Veritatis qui autem ",
+      "choices": {
+        "a": "Reprehenderit volupt",
+        "b": "Est tempor temporibu",
+        "c": "Aliquid distinctio ",
+        "d": "Dicta quia eius ipsa"
+      },
+      "correctAnswer": "b",
+      "score": 1,
+      "imgUrl": "https://i.ibb.co/Y4rZQSLb/Screenshot-from-2025-12-24-13-44-25.png",
+      "difficulty": "easy",
+      "examId": "yuwjp9"
+    },
+    {
+      "id": "0h9bbf",
+      "text": "Fugiat assumenda ali",
+      "choices": {
+        "a": "Necessitatibus deser",
+        "b": "Deleniti mollit repr",
+        "c": "Ab aut enim nobis cu",
+        "d": "Ab ipsa placeat eu"
+      },
+      "correctAnswer": "d",
+      "score": 6,
+      "imgUrl": "https://i.ibb.co/jPkqnbTp/Screenshot-from-2025-12-24-13-44-21.png",
+      "difficulty": "medium",
+      "examId": "yuwjp9"
+    },
+    {
+      "id": "a7e7",
+      "examId": "yuwjp9",
+      "text": "Cupidatat voluptatem",
+      "choices": {
+        "a": "Consequat Veritatis",
+        "b": "Ut neque et dolore a",
+        "c": "Numquam eiusmod nihi",
+        "d": "Dolor sed reprehende"
+      },
+      "correctAnswer": "b",
+      "score": "7",
+      "difficulty": "medium"
+    },
+    {
+      "id": "5t4ows",
+      "text": "Commodo officia dolo",
+      "choices": {
+        "a": "Animi magni error l",
+        "b": "Blanditiis magna Nam",
+        "c": "Unde non nulla ab do",
+        "d": "Omnis dolor a neque "
+      },
+      "correctAnswer": "a",
+      "score": 2,
+      "imgUrl": "https://i.ibb.co/NdWrqYmb/Screenshot-from-2025-12-24-13-46-04.png",
+      "difficulty": "easy",
+      "examId": null
+    },
+    {
+      "id": "64hbne",
+      "text": "Rem enim expedita as",
+      "choices": {
+        "a": "Nisi minus amet ame",
+        "b": "Consequatur facilis",
+        "c": "Dolore enim laborios",
+        "d": "Molestiae autem expl"
+      },
+      "correctAnswer": "d",
+      "score": 7,
+      "imgUrl": "https://i.ibb.co/mVw1Gy8y/Screenshot-from-2025-12-24-13-48-44.png",
+      "difficulty": "easy",
+      "examId": null
+    },
+    {
+      "id": "lw3mqw",
+      "text": "Dolor similique veli",
+      "choices": {
+        "a": "Autem aliquid dolore",
+        "b": "Hic animi repellend",
+        "c": "Quas excepturi aliqu",
+        "d": "Temporibus vel commo"
+      },
+      "correctAnswer": "a",
+      "score": 9,
+      "imgUrl": "https://i.ibb.co/NdWrqYmb/Screenshot-from-2025-12-24-13-46-04.png",
+      "difficulty": "medium",
+      "examId": "l0yrnp"
+    },
+    {
+      "id": "mb6zft",
+      "text": "Esse nemo veniam om",
+      "choices": {
+        "a": "Ut et occaecat minim",
+        "b": "Obcaecati amet non ",
+        "c": "Doloremque praesenti",
+        "d": "Voluptas perferendis"
+      },
+      "correctAnswer": "c",
+      "score": 9,
+      "imgUrl": "https://i.ibb.co/mVw1Gy8y/Screenshot-from-2025-12-24-13-48-44.png",
+      "difficulty": "hard",
+      "examId": "l0yrnp"
+    },
+    {
+      "id": "ol90fa",
+      "text": "Earum tempor ad ut c",
+      "choices": {
+        "a": "Anim officia porro e",
+        "b": "Facilis voluptatibus",
+        "c": "Veritatis placeat u",
+        "d": "Consequatur Sequi d"
+      },
+      "correctAnswer": "b",
+      "score": 5,
+      "imgUrl": "https://i.ibb.co/k6xFPjCW/Screenshot-27.png",
+      "difficulty": "hard",
+      "examId": "nm6tye"
+    },
+    {
+      "id": "ozvav0",
+      "text": "In alias elit in do",
+      "choices": {
+        "a": "Sit possimus quia f",
+        "b": "Asperiores earum eiu",
+        "c": "Rem ut laboriosam f",
+        "d": "Molestiae est labor"
+      },
+      "correctAnswer": "c",
+      "score": 5,
+      "imgUrl": "https://i.ibb.co/k6xFPjCW/Screenshot-27.png",
+      "difficulty": "hard",
+      "examId": "nm6tye"
+    },
+    {
+      "id": "pzqvu2",
+      "text": "Ratione voluptas et ",
+      "choices": {
+        "a": "Ratione irure aute a",
+        "b": "Magni labore sint a",
+        "c": "Officia aperiam magn",
+        "d": "Eu delectus sapient"
+      },
+      "correctAnswer": "a",
+      "score": 4,
+      "imgUrl": "https://i.ibb.co/kgzNN9Th/Screenshot-24.png",
+      "difficulty": "easy",
+      "examId": "nm6tye"
     }
   ],
   "exam_students": [
@@ -144,6 +321,42 @@
       "id": "mjfzdzuiwovle2v18w",
       "examId": null,
       "studentId": "023s85",
+      "status": "assigned"
+    },
+    {
+      "id": "mjmn19x9sgsgxlr6h",
+      "examId": "yuwjp9",
+      "studentId": "023s85",
+      "status": "assigned"
+    },
+    {
+      "id": "mjmn66b08sx99vy1u1k",
+      "examId": null,
+      "studentId": "023s85",
+      "status": "assigned"
+    },
+    {
+      "id": "mjmn66b7lki8n5g4oca",
+      "examId": null,
+      "studentId": "3k4406",
+      "status": "assigned"
+    },
+    {
+      "id": "mjmnmdsy6toabksjmr",
+      "examId": "l0yrnp",
+      "studentId": "023s85",
+      "status": "assigned"
+    },
+    {
+      "id": "mjmnmdt6rlzfmzqavz9",
+      "examId": "l0yrnp",
+      "studentId": "3k4406",
+      "status": "assigned"
+    },
+    {
+      "id": "mk02q260vaixkidner",
+      "examId": "nm6tye",
+      "studentId": "3k4406",
       "status": "assigned"
     }
   ],
@@ -169,6 +382,34 @@
         "ha4ixi": "a"
       },
       "finishedAt": "2025-12-21T17:17:19.359Z"
+    },
+    {
+      "id": "9345",
+      "studentId": "3k4406",
+      "score": 6,
+      "examId": "yuwjp9",
+      "answers": {
+        "0h9bbf": "a",
+        "dtwjqa": "b",
+        "zvz9au": "d",
+        "a7e7": "c"
+      },
+      "finishedAt": "2025-12-26T08:59:34.669Z"
+    },
+    {
+      "id": "e724",
+      "studentId": "023s85",
+      "score": 0,
+      "examId": "nm6tye",
+      "answers": {
+        "pzqvu2": "c",
+        "dtwjqa": "a",
+        "5t4ows": "d",
+        "64hbne": "c",
+        "ol90fa": "d",
+        "ozvav0": "d"
+      },
+      "finishedAt": "2026-01-04T18:53:19.409Z"
     }
   ]
 }

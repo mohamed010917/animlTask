@@ -3,6 +3,12 @@ import { allStudents } from "./main.js";
 const Errors = document.getElementById("Errors");
 const UrlPage = new URLSearchParams(window.location.search);
 let FinshStudents = false ;
+
+if(localStorage.getItem("teacher") == 'null' || localStorage.getItem("teacher") === null ){
+    location.href = "index.html";
+}
+
+
 // DOM Elements
 const editExamBtn = document.getElementById("edit_exam_id");
 const addQuestionBtn = document.getElementById("addQuestion");
@@ -44,12 +50,14 @@ async function AddStudents() {
     let results = await fetch('http://localhost:3000/results');
     if (!results.ok) return;
     results = await results.json();
-    data = data.find(s => s.examId == idExam);
+    
+    data = data.filter(s => s.examId == idExam);
     if(data){
         const allstud = await allStudents();
-        let students = allstud.filter(student => data.studentId == student.id);
-         students = students.filter(student => !results.find(s => s.studentId == student.id && s.examId == idExam));
-    
+        let students = allstud.filter(student => data.find(d => d.studentId == student.id));
+        students = students.filter(student => !results.find(s => s.studentId == student.id && s.examId == idExam));
+        console.log("data =>" ,data  , "all=>", allstud , students , results) ;
+        
         students.forEach(s => {
             Allstudents.innerHTML +=
                 `
@@ -124,7 +132,7 @@ async function AddStudents() {
         let allDel = document.querySelectorAll(".DelStudent");
         allDel.forEach(e => {
             e.onclick = async () => {
-                console.log(data);
+               
                 let id = data.find(s => e.dataset.id == s.studentId).id;
                 const response = await fetch(`http://localhost:3000/exam_students/${id}`,
                     { method: 'DELETE' });
@@ -146,7 +154,7 @@ async function AddStudentsFinsh() {
     if (!response.ok) return;
     let data = await response.json();
     data = data.filter(d => d.examId == idExam) ;
-    console.log(data) ;
+   
     if(data.length){
         editExamBtn.remove() ;
         addQuestionBtn.remove() ;

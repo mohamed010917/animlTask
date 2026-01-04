@@ -141,7 +141,7 @@ const createExam = function(){
 
 const AddquestionToExam = function(count){
     let nextquestionButton = document.getElementById('next-question-button');
-    nextquestionButton.addEventListener('click', async function(){
+    nextquestionButton.onclick =  async function(){
         const questionText = document.getElementById('question-text');
         const choiceA = document.getElementById('choice-a');
         const choiceB = document.getElementById('choice-b');
@@ -229,7 +229,7 @@ const AddquestionToExam = function(count){
             buttonAddQuestions.classList.add('hidden');
             backButton.classList.add('hidden');
         }
-    });
+    };
 }
 
 const AddStudentToExam = async function(){

@@ -53,15 +53,16 @@ const displayExamResult = async () => {
            
             const question = questionsData.find(q => q.id == questionId) ;
             console.log(question) ;
+            if(!question) return ;
             const isCorrect = question.correctAnswer === selectedAnswer;
             const questionDiv = document.createElement("div");
             questionDiv.className = "bg-white dark:bg-gray-800 rounded-xl shadow p-6";
             questionDiv.innerHTML = `
                 <h3 class="font-bold text-lg mb-4">
-                    Q${questionId}: ${question.title}
+                    Q${questionId}: ${question.text}
                 </h3>
                 ${
-                    question.imageUrl ? " <img src='${question.imageUrl }' alt='Question Image' class='mb-4 max-h-64 object-contain'></img>": ''
+                    question.imgUrl ? ` <img src='${question.imgUrl }' alt='Question Image' class='mb-4 max-h-64 object-contain'></img>`: ''
                 }
                
                 <ul class="space-y-3">

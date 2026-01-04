@@ -69,12 +69,12 @@ const displayExamResult = async () => {
 
         questionDiv.innerHTML = `
             <h3 class="font-bold text-lg mb-4">
-                Q${index + 1}: ${question.title}
+                Q${index + 1}: ${question.text}
             </h3>
 
             ${
-                question.imageUrl
-                    ? `<img src="${question.imageUrl}" 
+                question.imgUrl
+                    ? `<img src="${question.imgUrl}" 
                             alt="Question Image"
                             class="mb-4 max-h-64 object-contain rounded-lg">`
                     : ''
