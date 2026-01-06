@@ -114,7 +114,7 @@ const createExam = function(){
         errors = true;
     }
     let countError = document.querySelector('.countError');
-    if(isNaN(countQustion) || countQustion < 1 ){
+    if(isNaN(countQustion) || countQustion < 1 ){ // 15
         countError.textContent = "Question count must be a positive number. and greate then 15";
         countError.classList.remove('hidden');
         errors = true;

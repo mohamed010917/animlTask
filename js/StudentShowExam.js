@@ -39,14 +39,15 @@ const displayExamResult = async () => {
     const examData = await fetchExamData(quizData.examId);
     const questionsData = await fetchQuestionsData(quizData.examId);
     let total = questionsData.reduce((sum, question) =>  sum + +question.score   , 0);
-    
+     let teacher = await fetch("http://localhost:3000/teachers/" + examData.teacherId);
+     teacher = await teacher.json();
     imgStudent.src = student.imgurl;
     nameStudent.textContent = student.name;
     gradeStudent.textContent = `Grade: ${student.grade}`;
     totalScore.textContent = total;
     studentScore.textContent = quizData.score;
     examName.textContent = examData.name;
-    teacherName.textContent = examData.teacher;
+    teacherName.textContent = teacher.name;
     examDate.textContent = new Date(quizData.finishedAt).toLocaleDateString();
     console.log("i am hera" , quizData)
         Object.entries(quizData.answers).forEach(([questionId, selectedAnswer]) => {

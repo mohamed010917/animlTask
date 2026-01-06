@@ -7,7 +7,7 @@ if (localStorage.getItem("student") ) {
 
 
 if( localStorage.getItem("teacher")){
-    location.href = "teacher.html";
+    location.href = "TecherProfile.html";
 }
 if(localStorage.getItem("isLogedIn") === "true" ){
     localStorage.href = "index.html";

@@ -57,18 +57,23 @@ async function getExam(Id) {
 }
 
 async function loadQuestionsOfExam() {
+ let newArrayOfQuestions=localStorage.getItem('Questions'); 
+ if(!newArrayOfQuestions)return;
+ else{
     try {
-        const response1 = await fetch(`http://localhost:3000/questions?examId=${idExam}`);
+        const response1 = await fetch(`http://localhost:3000/questions`);
         if (!response1.ok) throw new Error();
         questions = await response1.json();
         if (questions.length === 0) return;
-        let newArrayOfQuestions = randomQuestions(questions);
+        questions = questions.filter(e => e.examId == idExam) ;
+        newArrayOfQuestions = randomQuestions(questions);
         displayQuestions(newArrayOfQuestions);
+        localStorage.setItem('Questions',newArrayOfQuestions);
     } catch (e) {
         console.log(e);
     }
 }
-
+}
 function randomQuestions(array) {
     let newArray = [...array];
     for (let i = array.length - 1; i > 0; i--) {
@@ -106,6 +111,8 @@ function displayQuestions(array) {
                 Btn.style.background = "red";
             }
             answers[currentQuestion.id] = AnswersOfQuestion[index].key;
+            localStorage.setItem('score',score);
+            localStorage.setItem('answers',JSON.stringify(answers));
             Btns.forEach(b => b.disabled = true);
             flag = false;
         }
@@ -136,6 +143,7 @@ ButtonNext.addEventListener('click', function () {
     currentIndex++;
     if (currentIndex < questions.length) {
         flag = true;
+        
         displayQuestions(questions);
     }
 });
@@ -183,7 +191,11 @@ function submitExam() {
     submitData();
 }
 
-ButtonSubmit.addEventListener('click', submitData);
+ButtonSubmit.addEventListener('click', function()
+{
+    submitData();
+});
+
 
 async function submitData() {
     const now = new Date();
@@ -204,8 +216,9 @@ async function submitData() {
             })
         });
         response = await response.json();
-       
-
+        localStorage.removeItem('currentIndex');
+    localStorage.removeItem('score');
+    localStorage.removeItem('answers');
         window.location.href = "studentProfile.html";
     } catch (e) {
         console.log(e);
@@ -213,4 +226,4 @@ async function submitData() {
 }
 
 getExam(idExam);
-loadQuestionsOfExam();
+loadQuestionsOfExam();  

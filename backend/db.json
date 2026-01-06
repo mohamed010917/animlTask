@@ -34,9 +34,51 @@
       "teacherId": "1"
     },
     {
-      "id": "qtfo8l",
-      "name": "Lucy Oconnor",
-      "duration": 20,
+      "id": "zae1i7",
+      "name": "Hamilton Horne",
+      "duration": 3,
+      "teacherId": "1"
+    },
+    {
+      "id": "4o2h5u",
+      "name": "Aubrey Huffman",
+      "duration": 3,
+      "teacherId": "1"
+    },
+    {
+      "id": "8drpqk",
+      "name": "India Jones",
+      "duration": 2,
+      "teacherId": "1"
+    },
+    {
+      "id": "jukzit",
+      "name": "Garth Galloway",
+      "duration": 30,
+      "teacherId": "1"
+    },
+    {
+      "id": "8oitss",
+      "name": "Sonia Huffman",
+      "duration": 8,
+      "teacherId": "1"
+    },
+    {
+      "id": "q2nuty",
+      "name": "Baxter Odom",
+      "duration": 5,
+      "teacherId": "1"
+    },
+    {
+      "id": "zzk193",
+      "name": "Breanna Morgan",
+      "duration": 7,
+      "teacherId": "1"
+    },
+    {
+      "id": "gi4u1g",
+      "name": "Naomi Bray",
+      "duration": 8,
       "teacherId": "1"
     }
   ],
@@ -144,7 +186,7 @@
       "score": 3,
       "imgUrl": "https://i.ibb.co/wNk5yVjn/Screenshot-26.png",
       "difficulty": "hard",
-      "examId": "qtfo8l"
+      "examId": null
     },
     {
       "id": "rhn0x2",
@@ -159,7 +201,7 @@
       "score": 8,
       "imgUrl": "https://i.ibb.co/cXR8z08D/Screenshot-24.png",
       "difficulty": "hard",
-      "examId": "qtfo8l"
+      "examId": null
     },
     {
       "id": "rnuxme",
@@ -174,13 +216,358 @@
       "score": 2,
       "imgUrl": "https://i.ibb.co/cXR8z08D/Screenshot-24.png",
       "difficulty": "hard",
-      "examId": "qtfo8l"
+      "examId": null
+    },
+    {
+      "id": "03ecer",
+      "text": "Temporibus dolor est",
+      "choices": {
+        "a": "Laudantium illo at ",
+        "b": "Voluptates pariatur",
+        "c": "Quis ut accusamus do",
+        "d": "Molestiae officia mo"
+      },
+      "correctAnswer": "a",
+      "score": 6,
+      "imgUrl": "https://i.ibb.co/wNk5yVjn/Screenshot-26.png",
+      "difficulty": "hard",
+      "examId": "zae1i7"
+    },
+    {
+      "id": "0aqkjx",
+      "text": "Qui nisi harum quam ",
+      "choices": {
+        "a": "Ratione laudantium ",
+        "b": "Hic qui dolore tempo",
+        "c": "Repellendus Est si",
+        "d": "Do consequatur Rati"
+      },
+      "correctAnswer": "b",
+      "score": 9,
+      "imgUrl": "https://i.ibb.co/Zq2N5D8/Screenshot-22.png",
+      "difficulty": "easy",
+      "examId": "zae1i7"
+    },
+    {
+      "id": "0jcgo9",
+      "text": "Repellendus Est ei",
+      "choices": {
+        "a": "Odit autem consectet",
+        "b": "Sed exercitation vel",
+        "c": "Et cupidatat error m",
+        "d": "Sunt aliquid volupt"
+      },
+      "correctAnswer": "c",
+      "score": 6,
+      "imgUrl": "https://i.ibb.co/Zq2N5D8/Screenshot-22.png",
+      "difficulty": "easy",
+      "examId": "zae1i7"
+    },
+    {
+      "id": "4zy87t",
+      "text": "Aperiam mollit ratio",
+      "choices": {
+        "a": "Excepturi reprehende",
+        "b": "Optio quis quam lab",
+        "c": "Aperiam est ipsa ip",
+        "d": "Inventore tempora et"
+      },
+      "correctAnswer": "d",
+      "score": 9,
+      "imgUrl": "https://i.ibb.co/cXR8z08D/Screenshot-24.png",
+      "difficulty": "medium",
+      "examId": "4o2h5u"
+    },
+    {
+      "id": "55ycyb",
+      "text": "Natus et laudantium",
+      "choices": {
+        "a": "Error doloremque ut ",
+        "b": "In tenetur molestiae",
+        "c": "Non aliquip et deser",
+        "d": "Architecto obcaecati"
+      },
+      "correctAnswer": "c",
+      "score": 3,
+      "imgUrl": "https://i.ibb.co/wNk5yVjn/Screenshot-26.png",
+      "difficulty": "medium",
+      "examId": "4o2h5u"
+    },
+    {
+      "id": "5beluw",
+      "text": "Accusamus omnis exer",
+      "choices": {
+        "a": "Aute voluptate incid",
+        "b": "Magna iusto distinct",
+        "c": "In voluptas in quis ",
+        "d": "Ullam nobis eligendi"
+      },
+      "correctAnswer": "a",
+      "score": 6,
+      "imgUrl": "https://i.ibb.co/cXR8z08D/Screenshot-24.png",
+      "difficulty": "hard",
+      "examId": "4o2h5u"
+    },
+    {
+      "id": "8pc3jl",
+      "text": "Qui soluta nihil acc",
+      "choices": {
+        "a": "Quisquam est do corp",
+        "b": "Ut voluptate duis pl",
+        "c": "Incidunt itaque vol",
+        "d": "Rerum voluptatem arc"
+      },
+      "correctAnswer": "c",
+      "score": 3,
+      "imgUrl": "https://i.ibb.co/wNk5yVjn/Screenshot-26.png",
+      "difficulty": "hard",
+      "examId": "8drpqk"
+    },
+    {
+      "id": "8v99hq",
+      "text": "Proident anim sed l",
+      "choices": {
+        "a": "Cillum ducimus illu",
+        "b": "Amet necessitatibus",
+        "c": "Et dolore et laborio",
+        "d": "Qui quia exercitatio"
+      },
+      "correctAnswer": "d",
+      "score": 2,
+      "imgUrl": "https://i.ibb.co/Zq2N5D8/Screenshot-22.png",
+      "difficulty": "medium",
+      "examId": "8drpqk"
+    },
+    {
+      "id": "90pl0v",
+      "text": "Anim accusamus asper",
+      "choices": {
+        "a": "Perferendis sequi eo",
+        "b": "Omnis facere placeat",
+        "c": "Unde aute sit magnam",
+        "d": "Alias officia volupt"
+      },
+      "correctAnswer": "c",
+      "score": 7,
+      "imgUrl": "https://i.ibb.co/cXR8z08D/Screenshot-24.png",
+      "difficulty": "easy",
+      "examId": "8drpqk"
+    },
+    {
+      "id": "k6cd70",
+      "text": "Exercitation eum adi",
+      "choices": {
+        "a": "Laboris ut laboriosa",
+        "b": "Quo tempor dicta con",
+        "c": "Dolor vero adipisci ",
+        "d": "Maiores in obcaecati"
+      },
+      "correctAnswer": "b",
+      "score": 3,
+      "imgUrl": "https://i.ibb.co/Zq2N5D8/Screenshot-22.png",
+      "difficulty": "hard",
+      "examId": "jukzit"
+    },
+    {
+      "id": "kbvh31",
+      "text": "Debitis laboris dolo",
+      "choices": {
+        "a": "Qui ex est ut aut su",
+        "b": "Laboris illo delenit",
+        "c": "Enim atque quasi dol",
+        "d": "Rerum nobis est non "
+      },
+      "correctAnswer": "b",
+      "score": 9,
+      "imgUrl": "https://i.ibb.co/wNk5yVjn/Screenshot-26.png",
+      "difficulty": "easy",
+      "examId": "jukzit"
+    },
+    {
+      "id": "khy60t",
+      "text": "Vel est asperiores a",
+      "choices": {
+        "a": "Tempora repudiandae ",
+        "b": "Laborum minima harum",
+        "c": "In praesentium paria",
+        "d": "Eiusmod provident c"
+      },
+      "correctAnswer": "b",
+      "score": 7,
+      "imgUrl": "https://i.ibb.co/cXR8z08D/Screenshot-24.png",
+      "difficulty": "medium",
+      "examId": "jukzit"
+    },
+    {
+      "id": "9hshh9",
+      "text": "Eligendi veritatis e",
+      "choices": {
+        "a": "Consectetur quia co",
+        "b": "Dolorum hic nihil mi",
+        "c": "Et aperiam possimus",
+        "d": "Et inventore consect"
+      },
+      "correctAnswer": "c",
+      "score": 9,
+      "imgUrl": "https://i.ibb.co/wNk5yVjn/Screenshot-26.png",
+      "difficulty": "medium",
+      "examId": "8oitss"
+    },
+    {
+      "id": "9tuohg",
+      "text": "Qui quas inventore s",
+      "choices": {
+        "a": "Duis qui quos et lib",
+        "b": "Voluptatem ipsam fa",
+        "c": "Do non nisi voluptat",
+        "d": "Mollit iure eos labo"
+      },
+      "correctAnswer": "d",
+      "score": 10,
+      "imgUrl": "https://i.ibb.co/Zq2N5D8/Screenshot-22.png",
+      "difficulty": "medium",
+      "examId": "8oitss"
+    },
+    {
+      "id": "qousbh",
+      "text": "Vel dolores nihil es",
+      "choices": {
+        "a": "Temporibus earum dol",
+        "b": "Sapiente alias esse ",
+        "c": "Earum inventore sed ",
+        "d": "Officiis illum cons"
+      },
+      "correctAnswer": "d",
+      "score": 10,
+      "imgUrl": "https://i.ibb.co/cXR8z08D/Screenshot-24.png",
+      "difficulty": "hard",
+      "examId": "q2nuty"
+    },
+    {
+      "id": "qxvek3",
+      "text": "Qui illo omnis esse",
+      "choices": {
+        "a": "Voluptatum culpa sit",
+        "b": "Aut perferendis earu",
+        "c": "Deserunt id esse per",
+        "d": "Cumque esse deserunt"
+      },
+      "correctAnswer": "d",
+      "score": 10,
+      "imgUrl": "https://i.ibb.co/Zq2N5D8/Screenshot-22.png",
+      "difficulty": "hard",
+      "examId": "q2nuty"
+    },
+    {
+      "id": "r9vfzp",
+      "text": "Quisquam vero itaque",
+      "choices": {
+        "a": "Adipisci dolor non v",
+        "b": "Dolor autem temporib",
+        "c": "Culpa eum eos et et",
+        "d": "Excepteur consectetu"
+      },
+      "correctAnswer": "b",
+      "score": 10,
+      "imgUrl": "https://i.ibb.co/Zq2N5D8/Screenshot-22.png",
+      "difficulty": "easy",
+      "examId": "q2nuty"
+    },
+    {
+      "id": "0ae31g",
+      "text": "Soluta et ducimus q",
+      "choices": {
+        "a": "Ea nihil similique q",
+        "b": "Qui ex consectetur f",
+        "c": "Sed et elit in accu",
+        "d": "Nam aut expedita et "
+      },
+      "correctAnswer": "d",
+      "score": 9,
+      "imgUrl": "https://i.ibb.co/wNk5yVjn/Screenshot-26.png",
+      "difficulty": "hard",
+      "examId": "zzk193"
+    },
+    {
+      "id": "0geblm",
+      "text": "Et in quia corrupti",
+      "choices": {
+        "a": "Eiusmod perferendis ",
+        "b": "Et omnis inventore s",
+        "c": "Cum accusamus conseq",
+        "d": "Ratione impedit cum"
+      },
+      "correctAnswer": "a",
+      "score": 4,
+      "imgUrl": "https://i.ibb.co/wNk5yVjn/Screenshot-26.png",
+      "difficulty": "medium",
+      "examId": "zzk193"
+    },
+    {
+      "id": "0mmzhl",
+      "text": "Nisi eveniet volupt",
+      "choices": {
+        "a": "Tempora sit dolore ",
+        "b": "Commodo a enim quia ",
+        "c": "Qui vero ea aspernat",
+        "d": "Sequi et facilis quo"
+      },
+      "correctAnswer": "d",
+      "score": 9,
+      "imgUrl": "https://i.ibb.co/wNk5yVjn/Screenshot-26.png",
+      "difficulty": "hard",
+      "examId": "zzk193"
+    },
+    {
+      "id": "h9hjz1",
+      "text": "Maiores labore in ve",
+      "choices": {
+        "a": "Obcaecati aut ipsam ",
+        "b": "Hic duis totam quis ",
+        "c": "Amet proident quos",
+        "d": "Vitae dolor fuga Ex"
+      },
+      "correctAnswer": "c",
+      "score": 5,
+      "imgUrl": "https://i.ibb.co/wNk5yVjn/Screenshot-26.png",
+      "difficulty": "medium",
+      "examId": "gi4u1g"
+    },
+    {
+      "id": "hlc78z",
+      "text": "Beatae esse aperiam dutwdfuqtdfuwdfuqdfuyd",
+      "choices": {
+        "a": "Officiis iusto odio ",
+        "b": "Maiores perferendis ",
+        "c": "Ducimus eaque amet",
+        "d": "Neque sed consequatu"
+      },
+      "correctAnswer": "",
+      "score": "10",
+      "imgUrl": "https://i.ibb.co/wNk5yVjn/Screenshot-26.png",
+      "difficulty": "hard",
+      "examId": "gi4u1g"
+    },
+    {
+      "id": "huei1k",
+      "text": "Voluptate enim eum l",
+      "choices": {
+        "a": "Sint voluptatem Di",
+        "b": "Magna dolores dolor ",
+        "c": "Temporibus laborum l",
+        "d": "Et laudantium porro"
+      },
+      "correctAnswer": "d",
+      "score": 3,
+      "imgUrl": "https://i.ibb.co/cXR8z08D/Screenshot-24.png",
+      "difficulty": "hard",
+      "examId": "gi4u1g"
     }
   ],
   "exam_students": [
     {
       "id": "mk2aru9si8wp7ojw8o",
-      "examId": "qtfo8l",
+      "examId": null,
       "studentId": "s45hj4",
       "status": "assigned"
     }
@@ -205,6 +592,102 @@
       "examId": "5y5zxt",
       "answers": {},
       "finishedAt": "2026-01-06T07:54:47.374Z"
+    },
+    {
+      "id": "47a1",
+      "studentId": "s45hj4",
+      "score": 2,
+      "examId": "zae1i7",
+      "answers": {
+        "r8e8fx": "c",
+        "rhn0x2": "d",
+        "rnuxme": "d",
+        "03ecer": "c",
+        "0aqkjx": "d",
+        "0jcgo9": "b"
+      },
+      "finishedAt": "2026-01-06T08:33:17.231Z"
+    },
+    {
+      "id": "f4d1",
+      "studentId": "s45hj4",
+      "score": 3,
+      "examId": "4o2h5u",
+      "answers": {
+        "4zy87t": "b",
+        "rhn0x2": "d",
+        "r8e8fx": "c",
+        "55ycyb": "c",
+        "5beluw": "b",
+        "rnuxme": "b"
+      },
+      "finishedAt": "2026-01-06T08:36:57.742Z"
+    },
+    {
+      "id": "d6b0",
+      "studentId": "s45hj4",
+      "score": 2,
+      "examId": "8drpqk",
+      "answers": {
+        "rhn0x2": "c",
+        "8v99hq": "a",
+        "90pl0v": "d",
+        "8pc3jl": "b",
+        "r8e8fx": "b",
+        "rnuxme": "d"
+      },
+      "finishedAt": "2026-01-06T08:39:51.454Z"
+    },
+    {
+      "id": "bcf0",
+      "studentId": "s45hj4",
+      "score": 7,
+      "examId": "jukzit",
+      "answers": {
+        "k6cd70": "c",
+        "kbvh31": "d",
+        "khy60t": "b"
+      },
+      "finishedAt": "2026-01-06T09:00:04.253Z"
+    },
+    {
+      "id": "5ae3",
+      "studentId": "s45hj4",
+      "score": 0,
+      "examId": "8oitss",
+      "answers": {},
+      "finishedAt": "2026-01-06T09:44:51.827Z"
+    },
+    {
+      "id": "f0fb",
+      "studentId": "s45hj4",
+      "score": 0,
+      "examId": "q2nuty",
+      "answers": {},
+      "finishedAt": "2026-01-06T09:56:10.484Z"
+    },
+    {
+      "id": "e946",
+      "studentId": "s45hj4",
+      "score": 4,
+      "examId": "zzk193",
+      "answers": {
+        "0ae31g": "b",
+        "0geblm": "a",
+        "0mmzhl": "a"
+      },
+      "finishedAt": "2026-01-06T09:57:07.817Z"
+    },
+    {
+      "id": "c0a8",
+      "studentId": "s45hj4",
+      "score": 3,
+      "examId": "gi4u1g",
+      "answers": {
+        "huei1k": "d",
+        "hlc78z": "d"
+      },
+      "finishedAt": "2026-01-06T10:11:40.362Z"
     }
   ]
 }
