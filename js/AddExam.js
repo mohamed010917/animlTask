@@ -99,6 +99,7 @@ const createExam = function(){
     const examDuration = document.getElementById('exam-duration').value;
     let errors = false;
 
+    
     let nameError = document.querySelector('.nameError');
     if(!/[a-zA-Z]+/ig.test(examTitle)){
         nameError.textContent = "Exam name must contain only letters.";

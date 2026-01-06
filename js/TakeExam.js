@@ -1,6 +1,18 @@
 if (!localStorage.getItem("student") || localStorage.getItem("student") === 'null') {
     location.href = "index.html";
 }
+let student = localStorage.getItem("student") ;
+const canTacke = async function(){
+    let Allquizzes = await fetch("http://localhost:3000/exam_students") ;
+    Allquizzes = await Allquizzes.json() ;
+    let std = Allquizzes.find(e => e.studentId == student.id);
+    if(std){
+       
+        location.href = "index.html";
+    }
+}
+
+canTacke();
 
 let QuestionNumber = document.querySelector("h2");
 let QuestionText = document.querySelector("h1");
@@ -37,7 +49,7 @@ async function getExam(Id) {
         if (responseExam.ok) {
             currentExam = await responseExam.json();
             document.getElementById("timer").innerText = `${currentExam.duration}:00`;
-            startTimer(currentExam.duration);
+            startTimer(currentExam);
         }
     } catch (e) {
         console.log(e);
@@ -129,15 +141,40 @@ ButtonNext.addEventListener('click', function () {
 });
 
 let timeOut;
-function startTimer(minutes) {
-    let seconds = minutes * 60;
+
+function startTimer(exam) {
+    const key = "examCount_" + exam.id;
+    let seconds = exam.duration * 60;
+
+   
+    if (localStorage.getItem(key)) {
+        seconds = Number(localStorage.getItem(key));
+    } else {
+        localStorage.setItem(key, seconds);
+    }
+
     let timer = document.getElementById("timer");
+
     timeOut = setInterval(() => {
-        timer.innerText = `${Math.floor(seconds / 60)}:${seconds % 60}`;
-        if (seconds <= 0) submitExam();
+
+        if (seconds <= 0) {
+            clearInterval(timeOut);
+            localStorage.removeItem(key);
+            submitExam();
+            return;
+        }
+
+        let minutes = Math.floor(seconds / 60);
+        let secs = seconds % 60;
+
+        timer.innerText = `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+
         seconds--;
+        localStorage.setItem(key, seconds);
+
     }, 1000);
 }
+
 
 function submitExam() {
     Btns.forEach(b => b.disabled = true);

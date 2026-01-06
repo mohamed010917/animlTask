@@ -1,13 +1,12 @@
 
 import {allTeachers , allStudents} from './main.js';
 
-
-
-
-if( ! localStorage.getItem("student") == 'null'){
+if (localStorage.getItem("student") ) {
     location.href = "studentProfile.html";
 }
-if( ! localStorage.getItem("teacher") == 'null'){
+
+
+if( localStorage.getItem("teacher")){
     location.href = "teacher.html";
 }
 if(localStorage.getItem("isLogedIn") === "true" ){

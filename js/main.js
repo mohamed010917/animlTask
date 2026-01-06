@@ -36,7 +36,6 @@ function applyTheme(theme) {
 }
 
 
-// تحميل الثيم المحفوظ
 const savedTheme = localStorage.getItem("theme") || "light";
 applyTheme(savedTheme);
 
